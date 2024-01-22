@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:learn_up/config/routes/routes.dart';
+import 'package:learn_up/features/auth/presentation/cubits/login/login_cubit.dart';
 import 'package:learn_up/features/auth/presentation/views/login_view.dart';
 import 'package:learn_up/features/onBoarding/presentation/cubit/on_boarding_cubit.dart';
 import 'package:learn_up/features/onBoarding/presentation/views/on_boarding_view.dart';
@@ -20,7 +21,9 @@ class AppRouter {
                 child: const OnBoardingView()));
 
       case Routes.loginViewRoute:
-        return MaterialPageRoute(builder: (context) => const LoginView());
+        return MaterialPageRoute(
+            builder: (context) => BlocProvider(
+                create: (context) => LoginCubit(), child: const LoginView()));
 
       default:
         return _unFoundRoute();
