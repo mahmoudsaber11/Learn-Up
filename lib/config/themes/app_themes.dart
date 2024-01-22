@@ -7,5 +7,6 @@ class AppThemes {
         useMaterial3: true,
         scaffoldBackgroundColor: AppColors.scaffoldBackgroundColor,
         brightness: Brightness.light,
+        appBarTheme: const AppBarTheme(backgroundColor: Colors.white),
       );
 }
