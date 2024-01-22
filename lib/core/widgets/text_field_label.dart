@@ -10,10 +10,13 @@ class TextFieldLabel extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.only(bottom: 9.h),
-      child: Text(
-        label,
-        style: AppStyles.textStyle16Regular
-            .copyWith(color: AppColors.primaryColor),
+      child: Align(
+        alignment: Alignment.centerLeft,
+        child: Text(
+          label,
+          style: AppStyles.textStyle16Regular
+              .copyWith(color: AppColors.primaryColor),
+        ),
       ),
     );
   }
