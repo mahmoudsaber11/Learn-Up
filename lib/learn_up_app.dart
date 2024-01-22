@@ -13,10 +13,9 @@ class LearnUpApp extends StatelessWidget {
       minTextAdapt: true,
       splitScreenMode: true,
       child: MaterialApp(
-        debugShowCheckedModeBanner: false,
-        title: AppString.appTitle,
-        onGenerateRoute: AppRouter.onGenerateRoute),
-      ),
-    )
+          debugShowCheckedModeBanner: false,
+          title: AppString.appTitle,
+          onGenerateRoute: AppRouter.onGenerateRoute),
+    );
   }
 }

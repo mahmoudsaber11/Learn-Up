@@ -6,5 +6,6 @@ class AppThemes {
         primaryColor: AppColors.primaryColor,
         useMaterial3: true,
         scaffoldBackgroundColor: AppColors.scaffoldBackgroundColor,
+        brightness: Brightness.light,
       );
 }
