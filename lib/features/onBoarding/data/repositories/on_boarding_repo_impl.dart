@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:learn_up/config/routes/routes.dart';
+import 'package:learn_up/core/helpers/cache_helper.dart';
 import 'package:learn_up/core/utils/functions/app_assets.dart';
+import 'package:learn_up/core/utils/functions/app_navigator.dart';
 import 'package:learn_up/features/onBoarding/data/model/on_boarding_model.dart';
 import 'package:learn_up/features/onBoarding/data/repositories/on_boarding_repo.dart';
+import 'package:learn_up/service_locator.dart';
 
 class OnBoardingRepoImpl implements OnBoardingRepo {
   @override
@@ -30,8 +34,23 @@ class OnBoardingRepoImpl implements OnBoardingRepo {
       {required BuildContext context,
       required PageController pageController,
       required bool isLastBoarding}) {
+    if (isLastBoarding) skipToLogin(context: context);
     pageController.nextPage(
-        duration: const Duration(milliseconds: 500),
+        duration: const Duration(seconds: 1),
         curve: Curves.fastEaseInToSlowEaseOut);
+  }
+
+  @override
+  void skipToLogin({required BuildContext context}) {
+    serviceLocator
+        .get<CacheHelper>()
+        .saveData(key: 'onBoarding', value: true)
+        .then(
+      (value) {
+        if (value) {
+          context.navigateAndReplacement(newRoute: Routes.loginViewRoute);
+        }
+      },
+    );
   }
 }

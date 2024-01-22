@@ -23,3 +23,7 @@ class PageViewIndexChanged extends OnBoardingState {
 class NavigateBetweenPages extends OnBoardingState {
   const NavigateBetweenPages();
 }
+
+class SkipToLogin extends OnBoardingState {
+  const SkipToLogin();
+}

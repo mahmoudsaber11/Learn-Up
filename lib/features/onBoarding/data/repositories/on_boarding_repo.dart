@@ -9,4 +9,6 @@ abstract class OnBoardingRepo {
     required PageController pageController,
     required bool isLastBoarding,
   });
+
+  void skipToLogin({required BuildContext context});
 }

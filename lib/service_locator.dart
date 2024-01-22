@@ -1,4 +1,5 @@
 import 'package:get_it/get_it.dart';
+import 'package:learn_up/core/helpers/cache_helper.dart';
 import 'package:learn_up/features/onBoarding/data/repositories/on_boarding_repo.dart';
 import 'package:learn_up/features/onBoarding/data/repositories/on_boarding_repo_impl.dart';
 import 'package:learn_up/features/onBoarding/presentation/cubit/on_boarding_cubit.dart';
@@ -9,6 +10,7 @@ final GetIt serviceLocator = GetIt.instance;
 class ServiceLocator {
   Future<void> setupServiceLocator() async {
     await _setupForExternal();
+    _setupForeCore();
     _setupForRepos();
     _setupForCubits();
   }
@@ -18,6 +20,12 @@ class ServiceLocator {
 
     serviceLocator
         .registerLazySingleton<SharedPreferences>(() => sharedPreferences);
+  }
+
+  void _setupForeCore() {
+    serviceLocator.registerLazySingleton<CacheHelper>(
+      () => CacheHelper(serviceLocator<SharedPreferences>()),
+    );
   }
 
   void _setupForRepos() {

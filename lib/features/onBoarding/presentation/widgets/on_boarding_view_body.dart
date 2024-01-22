@@ -44,12 +44,7 @@ class _OnBoardingViewBodyState extends State<OnBoardingViewBody> {
             CustomGeneralButton(
                 width: 326.w,
                 text: cubit.isLastBoarding ? "Get Started" : "Next",
-                onPressed: () {
-                  cubit.navigateBetweenPages(
-                    context: context,
-                    pageController: pageController,
-                  );
-                }),
+                onPressed: () => _navigateAmongOnBoarding(context)),
             SizedBox(
               height: MediaQuery.of(context).size.height * .12.h,
             ),
@@ -57,5 +52,16 @@ class _OnBoardingViewBodyState extends State<OnBoardingViewBody> {
         );
       },
     );
+  }
+
+  void _navigateAmongOnBoarding(BuildContext context) {
+    if (BlocProvider.of<OnBoardingCubit>(context).isLastBoarding) {
+      BlocProvider.of<OnBoardingCubit>(context).skipToLogin(context: context);
+    } else {
+      BlocProvider.of<OnBoardingCubit>(context).navigateBetweenPages(
+        context: context,
+        pageController: pageController,
+      );
+    }
   }
 }
