@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:learn_up/core/utils/functions/app_assets.dart';
 import 'package:learn_up/core/utils/functions/app_styles.dart';
-import 'package:learn_up/core/widgets/text_field_label.dart';
 import 'package:learn_up/features/auth/presentation/widgets/login/login_view_form.dart';
 
 class LoginView extends StatelessWidget {
