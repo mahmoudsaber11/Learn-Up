@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:learn_up/features/home/presentation/widgets/certificates_or_degrees_list_view.dart';
 import 'package:learn_up/features/home/presentation/widgets/custom_search_text_field.dart';
 import 'package:learn_up/features/home/presentation/widgets/custom_text_type.dart';
 import 'package:learn_up/features/home/presentation/widgets/recommended_courses_list_view.dart';
@@ -33,16 +34,17 @@ class HomeView extends StatelessWidget {
               ),
               const CustomTextType(type: "Recommended Courses"),
               SizedBox(
-                height: 20.h,
+                height: 10.h,
               ),
               const RecommendedCoursesListView(),
               SizedBox(
-                height: 15.h,
+                height: 18.h,
               ),
               const CustomTextType(type: "Most popular certificates/degrees"),
               SizedBox(
-                height: 20.h,
+                height: 10.h,
               ),
+              const CertificatesOrDegreesListView(),
             ],
           ),
         ),

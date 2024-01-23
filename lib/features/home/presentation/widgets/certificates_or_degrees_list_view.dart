@@ -3,8 +3,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:learn_up/core/utils/functions/app_assets.dart';
 import 'package:learn_up/core/utils/functions/app_styles.dart';
 
-class RecommendedCoursesListView extends StatelessWidget {
-  const RecommendedCoursesListView({
+class CertificatesOrDegreesListView extends StatelessWidget {
+  const CertificatesOrDegreesListView({
     super.key,
   });
 
@@ -24,7 +24,7 @@ class RecommendedCoursesListView extends StatelessWidget {
               Stack(
                 children: [
                   Container(
-                    height: 155.h,
+                    height: 174.h,
                     width: 169.w,
                     decoration: const BoxDecoration(
                         borderRadius: BorderRadius.only(
@@ -32,14 +32,14 @@ class RecommendedCoursesListView extends StatelessWidget {
                             topRight: Radius.circular(8)),
                         image: DecorationImage(
                             image: AssetImage(
-                          AppAssets.imagesCourse,
+                          AppAssets.imagesCertificates,
                         ))),
                   ),
                 ],
               ),
               Container(
                 width: 169.w,
-                height: 65.h,
+                height: 47.h,
                 decoration: ShapeDecoration(
                   color: Colors.white,
                   shape: RoundedRectangleBorder(
@@ -54,32 +54,21 @@ class RecommendedCoursesListView extends StatelessWidget {
                   ],
                 ),
                 child: Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 9.w, vertical: 8),
+                  padding: EdgeInsets.only(left: 8.w, top: 10.h),
                   child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            "Name of course ",
-                            style: AppStyles.textStyle12Medium,
-                          ),
-                          Text(
-                            " 3 months ",
-                            style: AppStyles.textStyle8Light,
-                          ),
-                        ],
+                      Text(
+                        "Master of Ux/Ui design ",
+                        style: AppStyles.textStyle12Medium,
                       ),
                       SizedBox(
                         height: 4.h,
                       ),
-                      Align(
-                        alignment: Alignment.centerLeft,
-                        child: Text(
-                          "Description about course",
-                          style: AppStyles.textStyle8Light
-                              .copyWith(color: Colors.black),
-                        ),
+                      Text(
+                        "University of london",
+                        style: AppStyles.textStyle8Light
+                            .copyWith(color: Colors.black),
                       ),
                     ],
                   ),
