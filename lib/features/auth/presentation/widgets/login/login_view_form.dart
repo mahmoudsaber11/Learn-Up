@@ -59,6 +59,7 @@ class _LoginViewFormState extends State<LoginViewForm> {
               children: [
                 const TextFieldLabel(label: "Email address"),
                 CustomTextField(
+                    circular: 20.r,
                     validate: (String? value) =>
                         Helper.validateEmailField(value),
                     keyboardType: TextInputType.emailAddress,
@@ -69,6 +70,7 @@ class _LoginViewFormState extends State<LoginViewForm> {
                 ),
                 const TextFieldLabel(label: "Password"),
                 CustomTextField(
+                    circular: 20.r,
                     validate: (String? value) =>
                         Helper.validatePasswordField(value),
                     isPassword: cubit.isPassword,

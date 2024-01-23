@@ -15,4 +15,6 @@ abstract class AppAssets {
   static const String iconActiveHome = "assets/icons/active_home.png";
   static const String iconActiveFavorite = "assets/icons/active_favorite.png";
   static const String iconActiveProfile = "assets/icons/active_profile.png";
+  static const String iconFilter = "assets/icons/Filter.png";
+  static const String iconSearch = "assets/icons/Search.png";
 }

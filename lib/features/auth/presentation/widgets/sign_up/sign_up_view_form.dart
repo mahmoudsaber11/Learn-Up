@@ -60,6 +60,7 @@ class _LoginViewFormState extends State<SignUpForm> {
               children: [
                 const TextFieldLabel(label: "Email address"),
                 CustomTextField(
+                    circular: 20.r,
                     validate: (String? value) =>
                         Helper.validateEmailField(value),
                     keyboardType: TextInputType.emailAddress,
@@ -70,6 +71,7 @@ class _LoginViewFormState extends State<SignUpForm> {
                 ),
                 const TextFieldLabel(label: "Username"),
                 CustomTextField(
+                    circular: 20.r,
                     validate: (String? value) =>
                         Helper.validateUserNameField(value),
                     keyboardType: TextInputType.name,
@@ -80,6 +82,7 @@ class _LoginViewFormState extends State<SignUpForm> {
                 ),
                 const TextFieldLabel(label: "Password"),
                 CustomTextField(
+                    circular: 20.r,
                     validate: (String? value) =>
                         Helper.validatePasswordField(value),
                     isPassword: cubit.isPassword,
@@ -101,6 +104,7 @@ class _LoginViewFormState extends State<SignUpForm> {
                 ),
                 const TextFieldLabel(label: "Confirm Password"),
                 CustomTextField(
+                    circular: 20.r,
                     validate: (String? value) =>
                         Helper.validateConfirmPasswordField(
                           value: value,

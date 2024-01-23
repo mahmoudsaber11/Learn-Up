@@ -11,11 +11,13 @@ class CustomTextField extends StatelessWidget {
     this.onChange,
     this.isPassword,
     this.suffix,
+    this.prefix,
     this.onSubmit,
     this.autofillHints,
     this.focusNode,
     this.onEditingComplete,
     this.textCapitalization = TextCapitalization.none,
+    required this.circular,
   });
 
   final TextInputType keyboardType;
@@ -25,19 +27,20 @@ class CustomTextField extends StatelessWidget {
   final ValueSetter? onChange;
   final bool? isPassword;
   final Widget? suffix;
+  final Widget? prefix;
   final Function(String submittedText)? onSubmit;
   final List<String>? autofillHints;
   final FocusNode? focusNode;
   final void Function()? onEditingComplete;
   final TextCapitalization textCapitalization;
-
+  final double circular;
   @override
   Widget build(BuildContext context) {
     return Material(
       elevation: 5,
       color: Colors.white,
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(20.r),
+        borderRadius: BorderRadius.circular(circular),
       ),
       child: TextFormField(
         obscureText: isPassword ?? false,
@@ -53,6 +56,7 @@ class CustomTextField extends StatelessWidget {
         textCapitalization: textCapitalization,
         decoration: InputDecoration(
           suffixIcon: suffix,
+          prefixIcon: prefix,
           focusedBorder: _buildTextFieldOutlinedBorder(),
           focusedErrorBorder: _buildTextFieldOutlinedBorder(),
           errorBorder: _buildTextFieldOutlinedBorder(),
