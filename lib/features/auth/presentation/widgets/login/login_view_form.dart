@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:learn_up/config/routes/routes.dart';
 import 'package:learn_up/core/helpers/helper.dart';
 import 'package:learn_up/core/utils/functions/app_colors.dart';
+import 'package:learn_up/core/utils/functions/app_navigator.dart';
 import 'package:learn_up/core/utils/functions/app_styles.dart';
 import 'package:learn_up/core/widgets/custom_general_button.dart';
 import 'package:learn_up/core/widgets/custom_text_field.dart';
@@ -105,7 +107,11 @@ class _LoginViewFormState extends State<LoginViewForm> {
                 SizedBox(
                   height: 17.h,
                 ),
-                CustomGeneralButton(text: "Login", onPressed: () {})
+                CustomGeneralButton(
+                    text: "Login",
+                    onPressed: () {
+                      context.navigateTo(routeName: Routes.layoutViewRoute);
+                    })
               ],
             ),
           );
