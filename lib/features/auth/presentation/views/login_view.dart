@@ -12,61 +12,60 @@ class LoginView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        body: Padding(
-          padding: EdgeInsets.only(top: 24.h),
-          child: CustomScrollView(
-            slivers: [
-              SliverPadding(
-                padding: EdgeInsets.symmetric(
-                  horizontal: 24.0.h,
-                ),
-                sliver: SliverFillRemaining(
-                  hasScrollBody: false,
-                  child: Column(
-                    children: [
-                      Image.asset(
-                        AppAssets.appIcon,
-                      ),
-                      Text(
-                        "Login",
-                        textAlign: TextAlign.center,
-                        style: AppStyles.textStyle24Medium,
-                      ),
-                      SizedBox(
-                        height: 24.h,
-                      ),
-                      const LoginViewForm(),
-                      SizedBox(
-                        height: 16.h,
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text(
-                            "Don’t  have an account ?",
-                            style: AppStyles.textStyle14Medium,
+    return Scaffold(
+      body: Padding(
+        padding:
+            EdgeInsets.only(top: MediaQuery.of(context).size.height * .1.h),
+        child: CustomScrollView(
+          slivers: [
+            SliverPadding(
+              padding: EdgeInsets.symmetric(
+                horizontal: 24.0.h,
+              ),
+              sliver: SliverFillRemaining(
+                hasScrollBody: false,
+                child: Column(
+                  children: [
+                    Image.asset(
+                      AppAssets.appIcon,
+                    ),
+                    Text(
+                      "Login",
+                      textAlign: TextAlign.center,
+                      style: AppStyles.textStyle24Medium,
+                    ),
+                    SizedBox(
+                      height: 24.h,
+                    ),
+                    const LoginViewForm(),
+                    SizedBox(
+                      height: 16.h,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          "Don’t  have an account ?",
+                          style: AppStyles.textStyle14Medium,
+                        ),
+                        InkWell(
+                          onTap: () {
+                            context.navigateTo(
+                                routeName: Routes.signUpViewRoute);
+                          },
+                          child: Text(
+                            "Sign up",
+                            style: AppStyles.textStyle14Medium
+                                .copyWith(color: AppColors.primaryColor),
                           ),
-                          InkWell(
-                            onTap: () {
-                              context.navigateTo(
-                                  routeName: Routes.signUpViewRoute);
-                            },
-                            child: Text(
-                              "Sign up",
-                              style: AppStyles.textStyle14Medium
-                                  .copyWith(color: AppColors.primaryColor),
-                            ),
-                          ),
-                        ],
-                      )
-                    ],
-                  ),
+                        ),
+                      ],
+                    )
+                  ],
                 ),
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );

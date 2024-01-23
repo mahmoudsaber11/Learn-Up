@@ -35,6 +35,7 @@ class CustomTextField extends StatelessWidget {
   Widget build(BuildContext context) {
     return Material(
       elevation: 5,
+      color: Colors.white,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(20.r),
       ),

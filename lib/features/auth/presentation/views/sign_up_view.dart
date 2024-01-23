@@ -12,50 +12,47 @@ class SignUpView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        body: SingleChildScrollView(
-          physics: const NeverScrollableScrollPhysics(),
-          child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 24.w),
-            child: Column(
-              children: [
-                Image.asset(
-                  AppAssets.appIcon,
-                ),
-                Text(
-                  "Sign up",
-                  textAlign: TextAlign.center,
-                  style: AppStyles.textStyle24Medium,
-                ),
-                SizedBox(
-                  height: 24.h,
-                ),
-                const SignUpForm(),
-                SizedBox(
-                  height: 16.h,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      "You already have an account ?",
-                      style: AppStyles.textStyle14Medium,
+    return Scaffold(
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: EdgeInsets.only(left: 24.w, right: 24.w, top: 16.h),
+          child: Column(
+            children: [
+              Image.asset(
+                AppAssets.appIcon,
+              ),
+              Text(
+                "Sign up",
+                textAlign: TextAlign.center,
+                style: AppStyles.textStyle24Medium,
+              ),
+              SizedBox(
+                height: 24.h,
+              ),
+              const SignUpForm(),
+              SizedBox(
+                height: 16.h,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    "You already have an account ?",
+                    style: AppStyles.textStyle14Medium,
+                  ),
+                  InkWell(
+                    onTap: () {
+                      context.navigateTo(routeName: Routes.loginViewRoute);
+                    },
+                    child: Text(
+                      "Login",
+                      style: AppStyles.textStyle14Medium
+                          .copyWith(color: AppColors.primaryColor),
                     ),
-                    InkWell(
-                      onTap: () {
-                        context.navigateTo(routeName: Routes.loginViewRoute);
-                      },
-                      child: Text(
-                        "Login",
-                        style: AppStyles.textStyle14Medium
-                            .copyWith(color: AppColors.primaryColor),
-                      ),
-                    ),
-                  ],
-                )
-              ],
-            ),
+                  ),
+                ],
+              )
+            ],
           ),
         ),
       ),

@@ -38,9 +38,6 @@ class _OnBoardingViewBodyState extends State<OnBoardingViewBody> {
                 },
               ),
             ),
-            SizedBox(
-              height: 40.h,
-            ),
             CustomGeneralButton(
                 width: 326.w,
                 text: cubit.isLastBoarding ? "Get Started" : "Next",
