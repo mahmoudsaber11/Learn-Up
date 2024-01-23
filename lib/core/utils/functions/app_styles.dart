@@ -36,4 +36,12 @@ class AppStyles {
     fontSize: 14.sp,
     fontWeight: FontWeight.w500,
   );
+
+  static TextStyle textStyle12Medium = TextStyle(
+      fontSize: 12.sp,
+      fontWeight: FontWeight.w500,
+      color: AppColors.primaryColor);
+
+  static TextStyle textStyle8Light = TextStyle(
+      fontSize: 8.sp, fontWeight: FontWeight.w300, color: AppColors.textColor);
 }

@@ -17,4 +17,6 @@ abstract class AppAssets {
   static const String iconActiveProfile = "assets/icons/active_profile.png";
   static const String iconFilter = "assets/icons/Filter.png";
   static const String iconSearch = "assets/icons/Search.png";
+
+  static const String imagesCourse = "assets/images/courses.png";
 }
