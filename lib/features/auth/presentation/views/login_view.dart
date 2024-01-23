@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:learn_up/config/routes/routes.dart';
 import 'package:learn_up/core/utils/functions/app_assets.dart';
 import 'package:learn_up/core/utils/functions/app_colors.dart';
+import 'package:learn_up/core/utils/functions/app_navigator.dart';
 import 'package:learn_up/core/utils/functions/app_styles.dart';
 import 'package:learn_up/features/auth/presentation/widgets/login/login_view_form.dart';
 
@@ -17,8 +19,8 @@ class LoginView extends StatelessWidget {
           child: CustomScrollView(
             slivers: [
               SliverPadding(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 16.0,
+                padding: EdgeInsets.symmetric(
+                  horizontal: 24.0.h,
                 ),
                 sliver: SliverFillRemaining(
                   hasScrollBody: false,
@@ -47,7 +49,10 @@ class LoginView extends StatelessWidget {
                             style: AppStyles.textStyle14Medium,
                           ),
                           InkWell(
-                            onTap: () {},
+                            onTap: () {
+                              context.navigateTo(
+                                  routeName: Routes.signUpViewRoute);
+                            },
                             child: Text(
                               "Sign up",
                               style: AppStyles.textStyle14Medium

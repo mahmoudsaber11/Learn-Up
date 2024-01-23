@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:learn_up/config/routes/routes.dart';
 import 'package:learn_up/features/auth/presentation/cubits/login/login_cubit.dart';
+import 'package:learn_up/features/auth/presentation/cubits/sign_up/sign_up_cubit.dart';
 import 'package:learn_up/features/auth/presentation/views/login_view.dart';
+import 'package:learn_up/features/auth/presentation/views/sign_up_view.dart';
 import 'package:learn_up/features/onBoarding/presentation/cubit/on_boarding_cubit.dart';
 import 'package:learn_up/features/onBoarding/presentation/views/on_boarding_view.dart';
 import 'package:learn_up/features/splash/presentation/view/splash_view.dart';
@@ -24,6 +26,11 @@ class AppRouter {
         return MaterialPageRoute(
             builder: (context) => BlocProvider(
                 create: (context) => LoginCubit(), child: const LoginView()));
+
+      case Routes.signUpViewRoute:
+        return MaterialPageRoute(
+            builder: (context) => BlocProvider(
+                create: (context) => SignUpCubit(), child: const SignUpView()));
 
       default:
         return _unFoundRoute();

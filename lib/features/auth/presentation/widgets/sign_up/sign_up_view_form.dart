@@ -3,25 +3,26 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:learn_up/core/helpers/helper.dart';
 import 'package:learn_up/core/utils/functions/app_colors.dart';
-import 'package:learn_up/core/utils/functions/app_styles.dart';
 import 'package:learn_up/core/widgets/custom_general_button.dart';
 import 'package:learn_up/core/widgets/custom_text_field.dart';
 import 'package:learn_up/core/widgets/text_field_label.dart';
-import 'package:learn_up/features/auth/presentation/cubits/login/login_cubit.dart';
-import 'package:learn_up/features/auth/presentation/cubits/login/login_state.dart';
+import 'package:learn_up/features/auth/presentation/cubits/sign_up/sign_up_cubit.dart';
+import 'package:learn_up/features/auth/presentation/cubits/sign_up/sign_up_state.dart';
 import 'package:learn_up/features/auth/presentation/widgets/or_sign_in.dart';
 import 'package:learn_up/features/auth/presentation/widgets/sign_with_social.dart';
 
-class LoginViewForm extends StatefulWidget {
-  const LoginViewForm({super.key});
+class SignUpForm extends StatefulWidget {
+  const SignUpForm({super.key});
 
   @override
-  State<LoginViewForm> createState() => _LoginViewFormState();
+  State<SignUpForm> createState() => _LoginViewFormState();
 }
 
-class _LoginViewFormState extends State<LoginViewForm> {
+class _LoginViewFormState extends State<SignUpForm> {
   final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _userNameContorller = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
+  final TextEditingController _confirmController = TextEditingController();
   late final GlobalKey<FormState> _formKey;
 
   void _initFormAttributes() {
@@ -42,15 +43,17 @@ class _LoginViewFormState extends State<LoginViewForm> {
 
   void _disposeController() {
     _emailController.dispose();
+    _userNameContorller.dispose();
     _passwordController.dispose();
+    _confirmController.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
-    return BlocConsumer<LoginCubit, LoginState>(
+    return BlocConsumer<SignUpCubit, SignUpState>(
         listener: (context, state) {},
         builder: (context, state) {
-          var cubit = BlocProvider.of<LoginCubit>(context);
+          var cubit = BlocProvider.of<SignUpCubit>(context);
           return Form(
             key: _formKey,
             child: Column(
@@ -63,7 +66,17 @@ class _LoginViewFormState extends State<LoginViewForm> {
                     hintText: "example@gmail.com",
                     controller: _emailController),
                 SizedBox(
-                  height: 50.h,
+                  height: 16.h,
+                ),
+                const TextFieldLabel(label: "Username"),
+                CustomTextField(
+                    validate: (String? value) =>
+                        Helper.validateUserNameField(value),
+                    keyboardType: TextInputType.name,
+                    hintText: "userName",
+                    controller: _userNameContorller),
+                SizedBox(
+                  height: 16.h,
                 ),
                 const TextFieldLabel(label: "Password"),
                 CustomTextField(
@@ -72,7 +85,7 @@ class _LoginViewFormState extends State<LoginViewForm> {
                     isPassword: cubit.isPassword,
                     suffix: IconButton(
                         onPressed: () {
-                          cubit.changePasswordVisibility();
+                          cubit.switchPassVisibility();
                         },
                         icon: Icon(
                           cubit.isPassword
@@ -86,16 +99,30 @@ class _LoginViewFormState extends State<LoginViewForm> {
                 SizedBox(
                   height: 16.h,
                 ),
-                Align(
-                  alignment: Alignment.centerRight,
-                  child: Text(
-                    "Forget Password?",
-                    style: AppStyles.textStyle16Regular
-                        .copyWith(color: AppColors.primaryColor),
-                  ),
-                ),
+                const TextFieldLabel(label: "Confirm Password"),
+                CustomTextField(
+                    validate: (String? value) =>
+                        Helper.validateConfirmPasswordField(
+                          value: value,
+                          password: _passwordController.text,
+                          confirmPassword: _confirmController.text,
+                        ),
+                    isPassword: cubit.isPassword,
+                    suffix: IconButton(
+                        onPressed: () {
+                          cubit.switchConfirmPassVisibility();
+                        },
+                        icon: Icon(
+                          cubit.isPassword
+                              ? Icons.visibility
+                              : Icons.visibility_off,
+                          color: AppColors.primaryColor,
+                        )),
+                    keyboardType: TextInputType.visiblePassword,
+                    hintText: '*********',
+                    controller: _passwordController),
                 SizedBox(
-                  height: 24.h,
+                  height: 16.h,
                 ),
                 const OrSignIn(),
                 SizedBox(
@@ -105,7 +132,7 @@ class _LoginViewFormState extends State<LoginViewForm> {
                 SizedBox(
                   height: 17.h,
                 ),
-                CustomGeneralButton(text: "Login", onPressed: () {})
+                CustomGeneralButton(text: "Sign up", onPressed: () {})
               ],
             ),
           );
