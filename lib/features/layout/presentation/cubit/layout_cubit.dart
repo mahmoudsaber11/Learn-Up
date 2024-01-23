@@ -8,7 +8,7 @@ class LayoutCubit extends Cubit<LayoutState> {
   final LayoutRepo layoutRepo;
   var currentIndex = 0;
 
-  void changeBottomNav({required index, required BuildContext context}) {
+  void changeBottomNav(int index, BuildContext context) {
     layoutRepo.changeBottomNav(index: index, context: context);
     emit(ChangeBottomNavState(index));
   }

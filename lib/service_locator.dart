@@ -1,5 +1,8 @@
 import 'package:get_it/get_it.dart';
 import 'package:learn_up/core/helpers/cache_helper.dart';
+import 'package:learn_up/features/layout/data/repositories/layout_repo.dart';
+import 'package:learn_up/features/layout/data/repositories/layout_repo_impl.dart';
+import 'package:learn_up/features/layout/presentation/cubit/layout_cubit.dart';
 import 'package:learn_up/features/onBoarding/data/repositories/on_boarding_repo.dart';
 import 'package:learn_up/features/onBoarding/data/repositories/on_boarding_repo_impl.dart';
 import 'package:learn_up/features/onBoarding/presentation/cubit/on_boarding_cubit.dart';
@@ -31,10 +34,15 @@ class ServiceLocator {
   void _setupForRepos() {
     serviceLocator
         .registerLazySingleton<OnBoardingRepo>(() => OnBoardingRepoImpl());
+
+    serviceLocator.registerLazySingleton<LayoutRepo>(() => LayoutRepoImpl());
   }
 
   void _setupForCubits() {
     serviceLocator.registerFactory<OnBoardingCubit>(() =>
         OnBoardingCubit(onBoardingRepo: serviceLocator.get<OnBoardingRepo>()));
+
+    serviceLocator.registerFactory<LayoutCubit>(
+        () => LayoutCubit(layoutRepo: serviceLocator.get<LayoutRepo>()));
   }
 }

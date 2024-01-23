@@ -5,6 +5,7 @@ import 'package:learn_up/features/auth/presentation/cubits/login/login_cubit.dar
 import 'package:learn_up/features/auth/presentation/cubits/sign_up/sign_up_cubit.dart';
 import 'package:learn_up/features/auth/presentation/views/login_view.dart';
 import 'package:learn_up/features/auth/presentation/views/sign_up_view.dart';
+import 'package:learn_up/features/layout/presentation/cubit/layout_cubit.dart';
 import 'package:learn_up/features/layout/presentation/view/layout_view.dart';
 import 'package:learn_up/features/onBoarding/presentation/cubit/on_boarding_cubit.dart';
 import 'package:learn_up/features/onBoarding/presentation/views/on_boarding_view.dart';
@@ -34,7 +35,10 @@ class AppRouter {
                 create: (context) => SignUpCubit(), child: const SignUpView()));
 
       case Routes.layoutViewRoute:
-        return MaterialPageRoute(builder: (context) => const LayoutView());
+        return MaterialPageRoute(
+            builder: (context) => BlocProvider(
+                create: (context) => serviceLocator.get<LayoutCubit>(),
+                child: const LayoutView()));
 
       default:
         return _unFoundRoute();
