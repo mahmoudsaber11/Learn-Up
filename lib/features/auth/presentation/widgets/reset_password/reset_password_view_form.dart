@@ -1,15 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:learn_up/config/routes/routes.dart';
 import 'package:learn_up/core/helpers/helper.dart';
 import 'package:learn_up/core/utils/functions/app_colors.dart';
-import 'package:learn_up/core/utils/functions/app_navigator.dart';
 import 'package:learn_up/core/widgets/custom_general_button.dart';
 import 'package:learn_up/core/widgets/custom_text_field.dart';
 import 'package:learn_up/core/widgets/text_field_label.dart';
 import 'package:learn_up/features/auth/presentation/cubits/reset_password/reset_password_cubit.dart';
 import 'package:learn_up/features/auth/presentation/cubits/reset_password/reset_password_state.dart';
+import 'package:learn_up/features/auth/presentation/widgets/reset_password/login_dialog.dart';
 
 class ResetPasswordForm extends StatefulWidget {
   const ResetPasswordForm({super.key});
@@ -101,8 +100,11 @@ class _LoginViewFormState extends State<ResetPasswordForm> {
             ),
             CustomGeneralButton(
                 text: "Reset Password",
-                onPressed: () {
-                  context.navigateTo(routeName: Routes.layoutViewRoute);
+                onPressed: () async {
+                  await showDialog(
+                    context: context,
+                    builder: (context) => const LoginDialog(),
+                  );
                 })
           ],
         ),
