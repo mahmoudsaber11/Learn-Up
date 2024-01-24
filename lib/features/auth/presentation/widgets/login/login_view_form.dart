@@ -92,10 +92,14 @@ class _LoginViewFormState extends State<LoginViewForm> {
                 ),
                 Align(
                   alignment: Alignment.centerRight,
-                  child: Text(
-                    "Forget Password?",
-                    style: AppStyles.textStyle16Regular
-                        .copyWith(color: AppColors.primaryColor),
+                  child: InkWell(
+                    onTap: () => context.navigateTo(
+                        routeName: Routes.forgetPasswordViewRoute),
+                    child: Text(
+                      "Forget Password?",
+                      style: AppStyles.textStyle16Regular
+                          .copyWith(color: AppColors.primaryColor),
+                    ),
                   ),
                 ),
                 SizedBox(
