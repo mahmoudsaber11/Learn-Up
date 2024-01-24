@@ -63,7 +63,7 @@ class _ForgetPasswordViewFormState extends State<VerificationViewForm> {
         CustomGeneralButton(
             text: "Verify",
             onPressed: () =>
-                context.navigateTo(routeName: Routes.verificationViewRoute)),
+                context.navigateTo(routeName: Routes.resetPasswordViewRoute)),
       ],
     );
   }

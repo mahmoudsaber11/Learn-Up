@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:learn_up/config/routes/routes.dart';
 import 'package:learn_up/features/auth/presentation/cubits/login/login_cubit.dart';
+import 'package:learn_up/features/auth/presentation/cubits/reset_password/reset_password_cubit.dart';
 import 'package:learn_up/features/auth/presentation/cubits/sign_up/sign_up_cubit.dart';
 import 'package:learn_up/features/auth/presentation/views/forget_password_view.dart';
 import 'package:learn_up/features/auth/presentation/views/login_view.dart';
+import 'package:learn_up/features/auth/presentation/views/reset_password_view.dart';
 import 'package:learn_up/features/auth/presentation/views/sign_up_view.dart';
 import 'package:learn_up/features/auth/presentation/views/verification_view.dart';
 import 'package:learn_up/features/layout/presentation/cubit/layout_cubit.dart';
@@ -49,6 +51,12 @@ class AppRouter {
       case Routes.verificationViewRoute:
         return MaterialPageRoute(
             builder: (context) => const VerificationView());
+
+      case Routes.resetPasswordViewRoute:
+        return MaterialPageRoute(
+            builder: (context) => BlocProvider(
+                create: (context) => ResetPasswordCubit(),
+                child: const ResetPasswordView()));
 
       default:
         return _unFoundRoute();
