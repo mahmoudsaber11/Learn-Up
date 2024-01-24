@@ -6,6 +6,7 @@ import 'package:learn_up/features/auth/presentation/cubits/sign_up/sign_up_cubit
 import 'package:learn_up/features/auth/presentation/views/forget_password_view.dart';
 import 'package:learn_up/features/auth/presentation/views/login_view.dart';
 import 'package:learn_up/features/auth/presentation/views/sign_up_view.dart';
+import 'package:learn_up/features/auth/presentation/views/verification_view.dart';
 import 'package:learn_up/features/layout/presentation/cubit/layout_cubit.dart';
 import 'package:learn_up/features/layout/presentation/view/layout_view.dart';
 import 'package:learn_up/features/onBoarding/presentation/cubit/on_boarding_cubit.dart';
@@ -44,6 +45,10 @@ class AppRouter {
       case Routes.forgetPasswordViewRoute:
         return MaterialPageRoute(
             builder: (context) => const ForgetPasswordView());
+
+      case Routes.verificationViewRoute:
+        return MaterialPageRoute(
+            builder: (context) => const VerificationView());
 
       default:
         return _unFoundRoute();

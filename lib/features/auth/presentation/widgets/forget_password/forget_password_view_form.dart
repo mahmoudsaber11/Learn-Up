@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:learn_up/config/routes/routes.dart';
 import 'package:learn_up/core/helpers/helper.dart';
+import 'package:learn_up/core/utils/functions/app_navigator.dart';
 import 'package:learn_up/core/utils/functions/app_styles.dart';
 import 'package:learn_up/core/widgets/custom_general_button.dart';
 import 'package:learn_up/core/widgets/custom_text_field.dart';
@@ -38,7 +40,10 @@ class _ForgetPasswordViewFormState extends State<ForgetPasswordViewForm> {
         SizedBox(
           height: 22.h,
         ),
-        CustomGeneralButton(text: "Verify Email", onPressed: () {}),
+        CustomGeneralButton(
+            text: "Verify Email",
+            onPressed: () =>
+                context.navigateTo(routeName: Routes.verificationViewRoute)),
         SizedBox(
           height: 16.h,
         ),
@@ -63,7 +68,8 @@ class _ForgetPasswordViewFormState extends State<ForgetPasswordViewForm> {
               style: AppStyles.textStyle12Medium.copyWith(color: Colors.black),
             ),
             InkWell(
-              onTap: () {},
+              onTap: () =>
+                  context.navigateTo(routeName: Routes.signUpViewRoute),
               child: Text(
                 "Sign up",
                 style: AppStyles.textStyle12Medium,
