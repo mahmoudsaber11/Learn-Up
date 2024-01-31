@@ -6,12 +6,13 @@ import 'package:learn_up/core/utils/functions/app_styles.dart';
 class CardTopicsItem extends StatelessWidget {
   const CardTopicsItem({
     super.key,
+    this.width,
   });
-
+  final double? width;
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 155.w,
+      width: width ?? 155.w,
       height: 58.h,
       decoration: ShapeDecoration(
         color: AppColors.primaryColor,

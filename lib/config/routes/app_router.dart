@@ -14,6 +14,7 @@ import 'package:learn_up/features/layout/presentation/view/layout_view.dart';
 import 'package:learn_up/features/onBoarding/presentation/cubit/on_boarding_cubit.dart';
 import 'package:learn_up/features/onBoarding/presentation/views/on_boarding_view.dart';
 import 'package:learn_up/features/splash/presentation/view/splash_view.dart';
+import 'package:learn_up/features/topics/presentation/view/topics_view.dart';
 import 'package:learn_up/service_locator.dart';
 
 class AppRouter {
@@ -57,6 +58,9 @@ class AppRouter {
             builder: (context) => BlocProvider(
                 create: (context) => ResetPasswordCubit(),
                 child: const ResetPasswordView()));
+
+      case Routes.topicsViewRoute:
+        return MaterialPageRoute(builder: (context) => const TopicsView());
 
       default:
         return _unFoundRoute();

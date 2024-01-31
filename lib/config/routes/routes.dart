@@ -7,4 +7,5 @@ class Routes {
   static const String verificationViewRoute = "/verificationView";
   static const String resetPasswordViewRoute = "/resetPasswordView";
   static const String layoutViewRoute = '/layoutView';
+  static const String topicsViewRoute = '/topicsView';
 }
