@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:learn_up/features/home/presentation/widgets/card_topics_item.dart';
+import 'package:learn_up/core/utils/functions/app_colors.dart';
+import 'package:learn_up/core/widgets/card_topics_item.dart';
 
 class TopicsListView extends StatelessWidget {
   const TopicsListView({
@@ -14,7 +15,10 @@ class TopicsListView extends StatelessWidget {
       child: ListView.separated(
         scrollDirection: Axis.horizontal,
         itemCount: 5,
-        itemBuilder: (context, index) => const CardTopicsItem(),
+        itemBuilder: (context, index) => const CardTopicsItem(
+          text: "Business",
+          backgroundColor: AppColors.primaryColor,
+        ),
         separatorBuilder: (context, index) => SizedBox(
           width: 4.w,
         ),

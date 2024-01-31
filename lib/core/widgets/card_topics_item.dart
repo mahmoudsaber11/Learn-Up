@@ -7,15 +7,19 @@ class CardTopicsItem extends StatelessWidget {
   const CardTopicsItem({
     super.key,
     this.width,
+    required this.text,
+    required this.backgroundColor,
   });
   final double? width;
+  final String text;
+  final Color backgroundColor;
   @override
   Widget build(BuildContext context) {
     return Container(
       width: width ?? 155.w,
       height: 58.h,
       decoration: ShapeDecoration(
-        color: AppColors.primaryColor,
+        color: backgroundColor,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(20.r),
         ),
@@ -23,7 +27,7 @@ class CardTopicsItem extends StatelessWidget {
       child: Align(
           alignment: Alignment.center,
           child: Text(
-            "Business",
+            text,
             style: AppStyles.textStyle16Bold,
           )),
     );
