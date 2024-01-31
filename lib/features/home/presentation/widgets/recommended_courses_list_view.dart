@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:learn_up/core/utils/functions/app_assets.dart';
 import 'package:learn_up/core/utils/functions/app_styles.dart';
+import 'package:learn_up/core/widgets/custom_button_favorite.dart';
 
 class RecommendedCoursesListView extends StatelessWidget {
   const RecommendedCoursesListView({
@@ -26,15 +27,17 @@ class RecommendedCoursesListView extends StatelessWidget {
                   Container(
                     height: 155.h,
                     width: 169.w,
-                    decoration: const BoxDecoration(
+                    decoration: BoxDecoration(
                         borderRadius: BorderRadius.only(
-                            topLeft: Radius.circular(8),
-                            topRight: Radius.circular(8)),
-                        image: DecorationImage(
+                            topLeft: Radius.circular(8.r),
+                            topRight: Radius.circular(8.r)),
+                        image: const DecorationImage(
+                            fit: BoxFit.cover,
                             image: AssetImage(
-                          AppAssets.imagesCourse,
-                        ))),
+                              AppAssets.imagesCourse,
+                            ))),
                   ),
+                  const CustomButtonFavorite()
                 ],
               ),
               Container(
@@ -54,7 +57,7 @@ class RecommendedCoursesListView extends StatelessWidget {
                   ],
                 ),
                 child: Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 9.w, vertical: 8),
+                  padding: EdgeInsets.symmetric(horizontal: 9.w, vertical: 8.h),
                   child: Column(
                     children: [
                       Row(

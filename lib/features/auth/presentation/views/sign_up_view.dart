@@ -21,6 +21,9 @@ class SignUpView extends StatelessWidget {
               Image.asset(
                 AppAssets.appIcon,
               ),
+              SizedBox(
+                height: 8.h,
+              ),
               Text(
                 "Sign up",
                 textAlign: TextAlign.center,

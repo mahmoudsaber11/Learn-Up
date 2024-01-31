@@ -17,6 +17,7 @@ class LoginView extends StatelessWidget {
         padding:
             EdgeInsets.only(top: MediaQuery.of(context).size.height * .1.h),
         child: CustomScrollView(
+          physics: const NeverScrollableScrollPhysics(),
           slivers: [
             SliverPadding(
               padding: EdgeInsets.symmetric(
@@ -28,6 +29,9 @@ class LoginView extends StatelessWidget {
                   children: [
                     Image.asset(
                       AppAssets.appIcon,
+                    ),
+                    SizedBox(
+                      height: 8.h,
                     ),
                     Text(
                       "Login",

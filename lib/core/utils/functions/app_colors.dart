@@ -5,4 +5,5 @@ class AppColors {
   static const Color scaffoldBackgroundColor = Colors.white;
   static const Color greyColor = Color(0x94515151);
   static const Color textColor = Color(0xff009688);
+  static const Color backgroundFavorite = Color(0xB7B5A9A8);
 }

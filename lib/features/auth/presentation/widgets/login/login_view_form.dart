@@ -66,7 +66,7 @@ class _LoginViewFormState extends State<LoginViewForm> {
                     hintText: "example@gmail.com",
                     controller: _emailController),
                 SizedBox(
-                  height: 50.h,
+                  height: 20.h,
                 ),
                 const TextFieldLabel(label: "Password"),
                 CustomTextField(
