@@ -4,9 +4,9 @@ import 'package:learn_up/config/routes/routes.dart';
 import 'package:learn_up/core/helpers/helper.dart';
 import 'package:learn_up/core/utils/functions/app_navigator.dart';
 import 'package:learn_up/core/utils/functions/app_styles.dart';
-import 'package:learn_up/core/widgets/custom_general_button.dart';
-import 'package:learn_up/core/widgets/custom_text_field.dart';
-import 'package:learn_up/core/widgets/text_field_label.dart';
+import 'package:learn_up/core/utils/widgets/custom_general_button.dart';
+import 'package:learn_up/core/utils/widgets/custom_text_field.dart';
+import 'package:learn_up/core/utils/widgets/text_field_label.dart';
 
 class ForgetPasswordViewForm extends StatefulWidget {
   const ForgetPasswordViewForm({

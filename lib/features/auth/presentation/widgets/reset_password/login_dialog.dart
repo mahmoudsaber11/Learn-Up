@@ -4,7 +4,7 @@ import 'package:learn_up/config/routes/routes.dart';
 import 'package:learn_up/core/utils/functions/app_colors.dart';
 import 'package:learn_up/core/utils/functions/app_navigator.dart';
 import 'package:learn_up/core/utils/functions/app_styles.dart';
-import 'package:learn_up/core/widgets/custom_general_button.dart';
+import 'package:learn_up/core/utils/widgets/custom_general_button.dart';
 
 class LoginDialog extends StatelessWidget {
   const LoginDialog({

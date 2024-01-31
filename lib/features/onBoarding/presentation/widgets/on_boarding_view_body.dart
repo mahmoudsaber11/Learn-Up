@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import 'package:learn_up/core/widgets/custom_general_button.dart';
+import 'package:learn_up/core/utils/widgets/custom_general_button.dart';
 import 'package:learn_up/features/onBoarding/presentation/cubit/on_boarding_cubit.dart';
 import 'package:learn_up/features/onBoarding/presentation/cubit/on_boarding_state.dart';
 import 'package:learn_up/features/onBoarding/presentation/widgets/page_view_item.dart';

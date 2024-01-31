@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:learn_up/core/widgets/card_topics_item.dart';
-import 'package:learn_up/core/widgets/custom_part_of_topics.dart';
+import 'package:learn_up/core/utils/widgets/card_topics_item.dart';
+import 'package:learn_up/core/utils/widgets/custom_part_of_topics.dart';
 
 class TopicsViewBody extends StatelessWidget {
   const TopicsViewBody({super.key});
