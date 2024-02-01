@@ -34,7 +34,6 @@ class _SplashViewBodyState extends State<SplashViewBody> {
     bool? onBoarding = serviceLocator
         .get<CacheHelper>()
         .getBoolData(key: AppString.cachedOnboarding);
-
     if (onBoarding != null) {
       if (Helper.uId != null) {
         context.navigateAndReplacement(
