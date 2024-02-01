@@ -5,7 +5,7 @@ import 'package:learn_up/core/utils/functions/app_assets.dart';
 import 'package:learn_up/core/utils/functions/app_colors.dart';
 import 'package:learn_up/core/utils/functions/app_navigator.dart';
 import 'package:learn_up/core/utils/functions/app_styles.dart';
-import 'package:learn_up/features/auth/presentation/widgets/login/login_view_form.dart';
+import 'package:learn_up/features/auth/presentation/widgets/login/login_form.dart';
 
 class LoginView extends StatelessWidget {
   const LoginView({super.key});

@@ -1,6 +1,5 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:learn_up/features/auth/data/entities/login_params.dart';
-import 'package:learn_up/features/auth/data/models/user.dart';
 import 'package:learn_up/features/auth/data/repositories/login/login_repo.dart';
 import 'package:learn_up/features/auth/presentation/cubits/login/login_state.dart';
 

@@ -1,5 +1,10 @@
+import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
+import 'package:learn_up/core/api/dio_consumer.dart';
 import 'package:learn_up/core/helpers/cache_helper.dart';
+import 'package:learn_up/features/auth/data/repositories/login/login_repo.dart';
+import 'package:learn_up/features/auth/data/repositories/login/login_repo_impl.dart';
+import 'package:learn_up/features/auth/presentation/cubits/login/login_cubit.dart';
 import 'package:learn_up/features/layout/data/repositories/layout_repo.dart';
 import 'package:learn_up/features/layout/data/repositories/layout_repo_impl.dart';
 import 'package:learn_up/features/layout/presentation/cubit/layout_cubit.dart';
@@ -23,26 +28,41 @@ class ServiceLocator {
 
     serviceLocator
         .registerLazySingleton<SharedPreferences>(() => sharedPreferences);
+
+    serviceLocator.registerLazySingleton<Dio>(() => Dio());
   }
+}
 
-  void _setupForeCore() {
-    serviceLocator.registerLazySingleton<CacheHelper>(
-      () => CacheHelper(serviceLocator<SharedPreferences>()),
-    );
-  }
+void _setupForeCore() {
+  serviceLocator.registerLazySingleton<CacheHelper>(
+    () => CacheHelper(serviceLocator<SharedPreferences>()),
+  );
+  serviceLocator.registerLazySingleton<DioConsumer>(
+    () => DioConsumer(dio: serviceLocator.get<Dio>()),
+  );
+}
 
-  void _setupForRepos() {
-    serviceLocator
-        .registerLazySingleton<OnBoardingRepo>(() => OnBoardingRepoImpl());
+void _setupForRepos() {
+  serviceLocator
+      .registerLazySingleton<OnBoardingRepo>(() => OnBoardingRepoImpl());
 
-    serviceLocator.registerLazySingleton<LayoutRepo>(() => LayoutRepoImpl());
-  }
+  serviceLocator.registerLazySingleton<LayoutRepo>(() => LayoutRepoImpl());
 
-  void _setupForCubits() {
-    serviceLocator.registerFactory<OnBoardingCubit>(() =>
-        OnBoardingCubit(onBoardingRepo: serviceLocator.get<OnBoardingRepo>()));
+  serviceLocator.registerLazySingleton<LoginRepo>(
+    () => LoginRepoImpl(
+      dioConsumer: serviceLocator.get<DioConsumer>(),
+    ),
+  );
+}
 
-    serviceLocator.registerFactory<LayoutCubit>(
-        () => LayoutCubit(layoutRepo: serviceLocator.get<LayoutRepo>()));
-  }
+void _setupForCubits() {
+  serviceLocator.registerFactory<OnBoardingCubit>(() =>
+      OnBoardingCubit(onBoardingRepo: serviceLocator.get<OnBoardingRepo>()));
+
+  serviceLocator.registerFactory<LayoutCubit>(
+      () => LayoutCubit(layoutRepo: serviceLocator.get<LayoutRepo>()));
+
+  serviceLocator.registerFactory<LoginCubit>(
+    () => LoginCubit(loginRepo: serviceLocator.get<LoginRepo>()),
+  );
 }

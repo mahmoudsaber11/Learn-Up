@@ -1,9 +1,6 @@
-import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:learn_up/config/routes/routes.dart';
-import 'package:learn_up/core/api/dio_consumer.dart';
-import 'package:learn_up/features/auth/data/repositories/login/login_repo_impl.dart';
 import 'package:learn_up/features/auth/presentation/cubits/login/login_cubit.dart';
 import 'package:learn_up/features/auth/presentation/cubits/reset_password/reset_password_cubit.dart';
 import 'package:learn_up/features/auth/presentation/cubits/sign_up/sign_up_cubit.dart';
@@ -35,9 +32,7 @@ class AppRouter {
       case Routes.loginViewRoute:
         return MaterialPageRoute(
             builder: (context) => BlocProvider(
-                create: (context) => LoginCubit(
-                    loginRepo:
-                        LoginRepoImpl(dioConsumer: DioConsumer(dio: Dio()))),
+                create: (context) => serviceLocator.get<LoginCubit>(),
                 child: const LoginView()));
 
       case Routes.signUpViewRoute:

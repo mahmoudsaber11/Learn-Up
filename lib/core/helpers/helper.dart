@@ -1,6 +1,9 @@
+import 'package:flutter/material.dart';
+import 'package:learn_up/features/auth/data/models/user.dart';
+
 class Helper {
   static String? uId = '';
-
+  static User? currentUser;
   static String? validatePasswordField(String? value) {
     if (value!.isEmpty) {
       return 'Please enter password';
@@ -45,5 +48,9 @@ class Helper {
     }
 
     return null;
+  }
+
+  static void keyboardUnfocus(BuildContext context) {
+    FocusScope.of(context).unfocus();
   }
 }
