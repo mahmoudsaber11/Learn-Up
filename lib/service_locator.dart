@@ -4,13 +4,17 @@ import 'package:learn_up/core/api/dio_consumer.dart';
 import 'package:learn_up/core/helpers/cache_helper.dart';
 import 'package:learn_up/features/auth/data/repositories/login/login_repo.dart';
 import 'package:learn_up/features/auth/data/repositories/login/login_repo_impl.dart';
+import 'package:learn_up/features/auth/data/repositories/sign_up/sign_up_repo.dart';
+import 'package:learn_up/features/auth/data/repositories/sign_up/sign_up_repo_impl.dart';
 import 'package:learn_up/features/auth/presentation/cubits/login/login_cubit.dart';
+import 'package:learn_up/features/auth/presentation/cubits/sign_up/sign_up_cubit.dart';
 import 'package:learn_up/features/layout/data/repositories/layout_repo.dart';
 import 'package:learn_up/features/layout/data/repositories/layout_repo_impl.dart';
 import 'package:learn_up/features/layout/presentation/cubit/layout_cubit.dart';
 import 'package:learn_up/features/onBoarding/data/repositories/on_boarding_repo.dart';
 import 'package:learn_up/features/onBoarding/data/repositories/on_boarding_repo_impl.dart';
 import 'package:learn_up/features/onBoarding/presentation/cubit/on_boarding_cubit.dart';
+import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 final GetIt serviceLocator = GetIt.instance;
@@ -29,7 +33,16 @@ class ServiceLocator {
     serviceLocator
         .registerLazySingleton<SharedPreferences>(() => sharedPreferences);
 
-    serviceLocator.registerLazySingleton<Dio>(() => Dio());
+    final dio = Dio()
+      ..interceptors.add(PrettyDioLogger(
+          requestHeader: true,
+          requestBody: true,
+          responseBody: true,
+          responseHeader: false,
+          compact: false,
+          maxWidth: 90));
+
+    serviceLocator.registerLazySingleton<Dio>(() => dio);
   }
 }
 
@@ -53,6 +66,11 @@ void _setupForRepos() {
       dioConsumer: serviceLocator.get<DioConsumer>(),
     ),
   );
+  serviceLocator.registerLazySingleton<SignUpRepo>(
+    () => SignUpRepoImpl(
+      dioConsumer: serviceLocator.get<DioConsumer>(),
+    ),
+  );
 }
 
 void _setupForCubits() {
@@ -64,5 +82,8 @@ void _setupForCubits() {
 
   serviceLocator.registerFactory<LoginCubit>(
     () => LoginCubit(loginRepo: serviceLocator.get<LoginRepo>()),
+  );
+  serviceLocator.registerFactory<SignUpCubit>(
+    () => SignUpCubit(signUpRepo: serviceLocator.get<SignUpRepo>()),
   );
 }

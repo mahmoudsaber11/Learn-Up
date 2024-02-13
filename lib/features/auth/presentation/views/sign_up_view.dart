@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:learn_up/config/routes/routes.dart';
-import 'package:learn_up/core/utils/functions/app_assets.dart';
 import 'package:learn_up/core/utils/functions/app_colors.dart';
 import 'package:learn_up/core/utils/functions/app_navigator.dart';
 import 'package:learn_up/core/utils/functions/app_styles.dart';
@@ -18,9 +17,9 @@ class SignUpView extends StatelessWidget {
           padding: EdgeInsets.only(left: 24.w, right: 24.w, top: 16.h),
           child: Column(
             children: [
-              Image.asset(
-                AppAssets.appIcon,
-              ),
+              // Image.asset(
+              //   AppAssets.appIcon,
+              // ),
               SizedBox(
                 height: 8.h,
               ),
@@ -29,6 +28,7 @@ class SignUpView extends StatelessWidget {
                 textAlign: TextAlign.center,
                 style: AppStyles.textStyle24Medium,
               ),
+
               SizedBox(
                 height: 24.h,
               ),
