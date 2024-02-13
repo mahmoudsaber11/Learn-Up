@@ -1,3 +1,4 @@
+import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -9,6 +10,7 @@ import 'package:learn_up/core/utils/widgets/text_field_label.dart';
 import 'package:learn_up/features/auth/presentation/cubits/sign_up/sign_up_cubit.dart';
 import 'package:learn_up/features/auth/presentation/cubits/sign_up/sign_up_state.dart';
 import 'package:learn_up/features/auth/presentation/widgets/or_sign_in.dart';
+import 'package:learn_up/features/auth/presentation/widgets/sign_up/image_picker_avatar.dart';
 import 'package:learn_up/features/auth/presentation/widgets/sign_with_social.dart';
 
 class SignUpForm extends StatefulWidget {
@@ -20,9 +22,11 @@ class SignUpForm extends StatefulWidget {
 
 class _LoginViewFormState extends State<SignUpForm> {
   final TextEditingController _emailController = TextEditingController();
-  final TextEditingController _userNameContorller = TextEditingController();
+  final TextEditingController _userNameController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
   final TextEditingController _confirmController = TextEditingController();
+  PlatformFile? _pickedImage;
+
   late final GlobalKey<FormState> _formKey;
 
   void _initFormAttributes() {
@@ -43,7 +47,7 @@ class _LoginViewFormState extends State<SignUpForm> {
 
   void _disposeController() {
     _emailController.dispose();
-    _userNameContorller.dispose();
+    _userNameController.dispose();
     _passwordController.dispose();
     _confirmController.dispose();
   }
@@ -58,6 +62,17 @@ class _LoginViewFormState extends State<SignUpForm> {
             key: _formKey,
             child: Column(
               children: [
+                Center(
+                  child: ImagePickerAvatar(
+                    isLarge: false,
+                    onPick: (image) {
+                      setState(() {
+                        _pickedImage = image;
+                      });
+                    },
+                    pickedImage: _pickedImage,
+                  ),
+                ),
                 const TextFieldLabel(label: "Email address"),
                 CustomTextField(
                     circular: 20.r,
@@ -76,7 +91,7 @@ class _LoginViewFormState extends State<SignUpForm> {
                         Helper.validateUserNameField(value),
                     keyboardType: TextInputType.name,
                     hintText: "userName",
-                    controller: _userNameContorller),
+                    controller: _userNameController),
                 SizedBox(
                   height: 16.h,
                 ),
@@ -124,7 +139,7 @@ class _LoginViewFormState extends State<SignUpForm> {
                         )),
                     keyboardType: TextInputType.visiblePassword,
                     hintText: '*********',
-                    controller: _passwordController),
+                    controller: _confirmController),
                 SizedBox(
                   height: 16.h,
                 ),
@@ -136,7 +151,19 @@ class _LoginViewFormState extends State<SignUpForm> {
                 SizedBox(
                   height: 17.h,
                 ),
-                CustomGeneralButton(text: "Sign up", onPressed: () {})
+                CustomGeneralButton(
+                    text: "Sign up",
+                    onPressed: () {
+                      if (_formKey.currentState!.validate()) {
+                        cubit.userSignUp(
+                          email: _emailController.text,
+                          password: _passwordController.text,
+                          username: _userNameController.text,
+                          confirmPassword: _confirmController.text,
+                          profileImage: _pickedImage?.path,
+                        );
+                      }
+                    })
               ],
             ),
           );
