@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:learn_up/core/utils/functions/my_sized_box.dart';
 
 import 'package:learn_up/core/utils/widgets/custom_general_button.dart';
 import 'package:learn_up/features/onBoarding/presentation/cubit/on_boarding_cubit.dart';
@@ -23,9 +24,7 @@ class _OnBoardingViewBodyState extends State<OnBoardingViewBody> {
         OnBoardingCubit cubit = BlocProvider.of<OnBoardingCubit>(context);
         return Column(
           children: [
-            SizedBox(
-              height: 50.h,
-            ),
+            MySizedBox.height50,
             Expanded(
               child: PageView.builder(
                 controller: pageController,

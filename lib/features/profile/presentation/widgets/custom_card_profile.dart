@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:learn_up/core/utils/functions/app_assets.dart';
 import 'package:learn_up/core/utils/functions/app_colors.dart';
 import 'package:learn_up/core/utils/functions/app_styles.dart';
+import 'package:learn_up/core/utils/functions/my_sized_box.dart';
 
 class CustomCardProfile extends StatelessWidget {
   const CustomCardProfile({
@@ -19,15 +20,11 @@ class CustomCardProfile extends StatelessWidget {
           borderRadius: BorderRadius.circular(8.r)),
       child: Row(
         children: [
-          SizedBox(
-            width: 16.w,
-          ),
+          MySizedBox.width16,
           Image.asset(
             AppAssets.imagesProfile,
           ),
-          SizedBox(
-            width: 8.w,
-          ),
+          MySizedBox.width8,
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [

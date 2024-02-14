@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:learn_up/core/utils/functions/app_styles.dart';
+import 'package:learn_up/core/utils/functions/my_sized_box.dart';
 
 class CustomTextAndIcon extends StatelessWidget {
   const CustomTextAndIcon({
@@ -19,9 +20,7 @@ class CustomTextAndIcon extends StatelessWidget {
       child: Row(
         children: [
           IconButton(onPressed: onPressed, icon: icon),
-          SizedBox(
-            width: 30.w,
-          ),
+          MySizedBox.width30,
           Text(
             text,
             style: AppStyles.textStyle24Medium.copyWith(color: Colors.black),
