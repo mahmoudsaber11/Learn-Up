@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:learn_up/core/utils/functions/app_colors.dart';
 import 'package:learn_up/core/utils/functions/app_navigator.dart';
 import 'package:learn_up/core/utils/functions/app_styles.dart';
+import 'package:learn_up/core/utils/functions/my_sized_box.dart';
 import 'package:learn_up/features/auth/presentation/widgets/verification/verification_view_form.dart';
 
 class VerificationView extends StatelessWidget {
@@ -30,17 +31,13 @@ class VerificationView extends StatelessWidget {
               "OTP Verification",
               style: AppStyles.textStyle24Medium,
             ),
-            SizedBox(
-              height: 40.h,
-            ),
+            MySizedBox.height40,
             Text(
               "We’ve sent a code to Example@gmail.com",
               style: AppStyles.textStyle16Regular
                   .copyWith(color: AppColors.greyColor),
             ),
-            SizedBox(
-              height: 36.h,
-            ),
+            MySizedBox.height36,
             const VerificationViewForm()
           ],
         ),

@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:learn_up/core/helpers/helper.dart';
 import 'package:learn_up/core/utils/functions/app_colors.dart';
+import 'package:learn_up/core/utils/functions/my_sized_box.dart';
 import 'package:learn_up/core/utils/widgets/custom_general_button.dart';
 import 'package:learn_up/core/utils/widgets/custom_text_field.dart';
 import 'package:learn_up/core/utils/widgets/text_field_label.dart';
@@ -81,9 +82,7 @@ class _LoginViewFormState extends State<SignUpForm> {
                     keyboardType: TextInputType.emailAddress,
                     hintText: "example@gmail.com",
                     controller: _emailController),
-                SizedBox(
-                  height: 16.h,
-                ),
+                MySizedBox.height16,
                 const TextFieldLabel(label: "Username"),
                 CustomTextField(
                     circular: 20.r,
@@ -92,9 +91,7 @@ class _LoginViewFormState extends State<SignUpForm> {
                     keyboardType: TextInputType.name,
                     hintText: "userName",
                     controller: _userNameController),
-                SizedBox(
-                  height: 16.h,
-                ),
+                MySizedBox.height16,
                 const TextFieldLabel(label: "Password"),
                 CustomTextField(
                     circular: 20.r,
@@ -114,9 +111,7 @@ class _LoginViewFormState extends State<SignUpForm> {
                     keyboardType: TextInputType.visiblePassword,
                     hintText: '*********',
                     controller: _passwordController),
-                SizedBox(
-                  height: 16.h,
-                ),
+                MySizedBox.height16,
                 const TextFieldLabel(label: "Confirm Password"),
                 CustomTextField(
                     circular: 20.r,
@@ -140,17 +135,11 @@ class _LoginViewFormState extends State<SignUpForm> {
                     keyboardType: TextInputType.visiblePassword,
                     hintText: '*********',
                     controller: _confirmController),
-                SizedBox(
-                  height: 16.h,
-                ),
+                MySizedBox.height16,
                 const OrSignIn(),
-                SizedBox(
-                  height: 16.h,
-                ),
+                MySizedBox.height16,
                 const SignWithSocial(),
-                SizedBox(
-                  height: 17.h,
-                ),
+                MySizedBox.height16,
                 CustomGeneralButton(
                     text: "Sign up",
                     onPressed: () {

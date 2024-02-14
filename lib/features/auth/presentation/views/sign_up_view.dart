@@ -4,6 +4,7 @@ import 'package:learn_up/config/routes/routes.dart';
 import 'package:learn_up/core/utils/functions/app_colors.dart';
 import 'package:learn_up/core/utils/functions/app_navigator.dart';
 import 'package:learn_up/core/utils/functions/app_styles.dart';
+import 'package:learn_up/core/utils/functions/my_sized_box.dart';
 import 'package:learn_up/features/auth/presentation/widgets/sign_up/sign_up_view_form.dart';
 
 class SignUpView extends StatelessWidget {
@@ -20,22 +21,16 @@ class SignUpView extends StatelessWidget {
               // Image.asset(
               //   AppAssets.appIcon,
               // ),
-              SizedBox(
-                height: 8.h,
-              ),
+              MySizedBox.height8,
               Text(
                 "Sign up",
                 textAlign: TextAlign.center,
                 style: AppStyles.textStyle24Medium,
               ),
 
-              SizedBox(
-                height: 24.h,
-              ),
+              MySizedBox.height24,
               const SignUpForm(),
-              SizedBox(
-                height: 16.h,
-              ),
+              MySizedBox.height16,
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [

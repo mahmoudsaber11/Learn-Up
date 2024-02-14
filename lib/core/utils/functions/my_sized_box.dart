@@ -19,14 +19,23 @@ class MySizedBox {
   static SizedBox height40 = SizedBox(
     height: 40.h,
   );
+  static SizedBox height36 = SizedBox(
+    height: 36.h,
+  );
   static SizedBox height24 = SizedBox(
     height: 24.h,
+  );
+  static SizedBox height22 = SizedBox(
+    height: 22.h,
   );
 
   static SizedBox height27 = SizedBox(
     height: 27.h,
   );
 
+  static SizedBox height20 = SizedBox(
+    height: 20.h,
+  );
   static SizedBox height50 = SizedBox(
     height: 50.h,
   );

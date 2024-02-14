@@ -4,6 +4,7 @@ import 'package:learn_up/config/routes/routes.dart';
 import 'package:learn_up/core/helpers/helper.dart';
 import 'package:learn_up/core/utils/functions/app_navigator.dart';
 import 'package:learn_up/core/utils/functions/app_styles.dart';
+import 'package:learn_up/core/utils/functions/my_sized_box.dart';
 import 'package:learn_up/core/utils/widgets/custom_general_button.dart';
 import 'package:learn_up/core/utils/widgets/custom_text_field.dart';
 import 'package:learn_up/core/utils/widgets/text_field_label.dart';
@@ -37,16 +38,12 @@ class _ForgetPasswordViewFormState extends State<ForgetPasswordViewForm> {
             keyboardType: TextInputType.emailAddress,
             hintText: "example@gmail.com",
             controller: _emailController),
-        SizedBox(
-          height: 22.h,
-        ),
+        MySizedBox.height22,
         CustomGeneralButton(
             text: "Verify Email",
             onPressed: () =>
                 context.navigateTo(routeName: Routes.verificationViewRoute)),
-        SizedBox(
-          height: 16.h,
-        ),
+        MySizedBox.height16,
         Align(
           alignment: Alignment.centerLeft,
           child: InkWell(
@@ -57,9 +54,7 @@ class _ForgetPasswordViewFormState extends State<ForgetPasswordViewForm> {
             ),
           ),
         ),
-        SizedBox(
-          height: 24.h,
-        ),
+        MySizedBox.height24,
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [

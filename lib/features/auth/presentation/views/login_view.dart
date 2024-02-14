@@ -5,6 +5,7 @@ import 'package:learn_up/core/utils/functions/app_assets.dart';
 import 'package:learn_up/core/utils/functions/app_colors.dart';
 import 'package:learn_up/core/utils/functions/app_navigator.dart';
 import 'package:learn_up/core/utils/functions/app_styles.dart';
+import 'package:learn_up/core/utils/functions/my_sized_box.dart';
 import 'package:learn_up/features/auth/presentation/widgets/login/login_form.dart';
 
 class LoginView extends StatelessWidget {
@@ -30,21 +31,15 @@ class LoginView extends StatelessWidget {
                     Image.asset(
                       AppAssets.appIcon,
                     ),
-                    SizedBox(
-                      height: 8.h,
-                    ),
+                    MySizedBox.height8,
                     Text(
                       "Login",
                       textAlign: TextAlign.center,
                       style: AppStyles.textStyle24Medium,
                     ),
-                    SizedBox(
-                      height: 24.h,
-                    ),
+                    MySizedBox.height24,
                     const LoginViewForm(),
-                    SizedBox(
-                      height: 16.h,
-                    ),
+                    MySizedBox.height16,
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [

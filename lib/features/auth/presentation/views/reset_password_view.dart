@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:learn_up/core/utils/functions/app_colors.dart';
 import 'package:learn_up/core/utils/functions/app_navigator.dart';
 import 'package:learn_up/core/utils/functions/app_styles.dart';
+import 'package:learn_up/core/utils/functions/my_sized_box.dart';
 import 'package:learn_up/features/auth/presentation/widgets/reset_password/reset_password_view_form.dart';
 
 class ResetPasswordView extends StatelessWidget {
@@ -32,17 +33,13 @@ class ResetPasswordView extends StatelessWidget {
                 "Reset Password",
                 style: AppStyles.textStyle24Medium,
               ),
-              SizedBox(
-                height: 40.h,
-              ),
+              MySizedBox.height40,
               Text(
                 "Enter your  new password ,make sure  that it should at least 8 characters started by _ ",
                 style: AppStyles.textStyle16Regular
                     .copyWith(color: AppColors.greyColor),
               ),
-              SizedBox(
-                height: 16.h,
-              ),
+              MySizedBox.height16,
               const ResetPasswordForm()
             ],
           ),

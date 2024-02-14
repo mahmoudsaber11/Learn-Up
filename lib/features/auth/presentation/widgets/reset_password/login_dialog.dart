@@ -4,6 +4,7 @@ import 'package:learn_up/config/routes/routes.dart';
 import 'package:learn_up/core/utils/functions/app_colors.dart';
 import 'package:learn_up/core/utils/functions/app_navigator.dart';
 import 'package:learn_up/core/utils/functions/app_styles.dart';
+import 'package:learn_up/core/utils/functions/my_sized_box.dart';
 import 'package:learn_up/core/utils/widgets/custom_general_button.dart';
 
 class LoginDialog extends StatelessWidget {
@@ -27,16 +28,14 @@ class LoginDialog extends StatelessWidget {
             color: const Color(0xff0EAA00),
             size: 40.w,
           ),
-          SizedBox(height: 19.h),
+          MySizedBox.height20,
           Text(
             "Password has been changed successfully",
             textAlign: TextAlign.center,
             style: AppStyles.textStyle16Medium
                 .copyWith(color: AppColors.primaryColor),
           ),
-          SizedBox(
-            height: 27.h,
-          ),
+          MySizedBox.height27,
           CustomGeneralButton(
             width: 192.w,
             text: "Log in",

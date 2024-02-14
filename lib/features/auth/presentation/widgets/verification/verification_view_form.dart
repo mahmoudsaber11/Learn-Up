@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:learn_up/config/routes/routes.dart';
 import 'package:learn_up/core/utils/functions/app_colors.dart';
 import 'package:learn_up/core/utils/functions/app_navigator.dart';
+import 'package:learn_up/core/utils/functions/my_sized_box.dart';
 import 'package:learn_up/core/utils/widgets/custom_general_button.dart';
 import 'package:learn_up/core/utils/widgets/text_field_label.dart';
 import 'package:pinput/pinput.dart';
@@ -30,9 +31,7 @@ class _ForgetPasswordViewFormState extends State<VerificationViewForm> {
     return Column(
       children: [
         const TextFieldLabel(label: "OTP Code"),
-        SizedBox(
-          height: 18.h,
-        ),
+        MySizedBox.height20,
         Pinput(
           controller: _otpController,
           androidSmsAutofillMethod: AndroidSmsAutofillMethod.smsUserConsentApi,
@@ -57,9 +56,7 @@ class _ForgetPasswordViewFormState extends State<VerificationViewForm> {
             return null;
           },
         ),
-        SizedBox(
-          height: 44.h,
-        ),
+        MySizedBox.height40,
         CustomGeneralButton(
             text: "Verify",
             onPressed: () =>

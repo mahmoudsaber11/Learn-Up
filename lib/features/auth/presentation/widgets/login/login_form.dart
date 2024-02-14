@@ -8,6 +8,7 @@ import 'package:learn_up/core/utils/functions/app_colors.dart';
 import 'package:learn_up/core/utils/functions/app_navigator.dart';
 import 'package:learn_up/core/utils/functions/app_string.dart';
 import 'package:learn_up/core/utils/functions/app_styles.dart';
+import 'package:learn_up/core/utils/functions/my_sized_box.dart';
 import 'package:learn_up/core/utils/functions/show_toast.dart';
 import 'package:learn_up/core/utils/widgets/custom_circular_progress_indicator.dart';
 import 'package:learn_up/core/utils/widgets/custom_general_button.dart';
@@ -84,9 +85,7 @@ class _LoginViewFormState extends State<LoginViewForm> {
                     focusNode: _emailFocusNode,
                     hintText: "example@gmail.com",
                     controller: _emailController),
-                SizedBox(
-                  height: 20.h,
-                ),
+                MySizedBox.height20,
                 const TextFieldLabel(label: "Password"),
                 CustomTextField(
                     autofillHints: const <String>[AutofillHints.password],
@@ -109,9 +108,7 @@ class _LoginViewFormState extends State<LoginViewForm> {
                     keyboardType: TextInputType.visiblePassword,
                     hintText: '*********',
                     controller: _passwordController),
-                SizedBox(
-                  height: 16.h,
-                ),
+                MySizedBox.height16,
                 Align(
                   alignment: Alignment.centerRight,
                   child: InkWell(
@@ -124,17 +121,11 @@ class _LoginViewFormState extends State<LoginViewForm> {
                     ),
                   ),
                 ),
-                SizedBox(
-                  height: 24.h,
-                ),
+                MySizedBox.height24,
                 const OrSignIn(),
-                SizedBox(
-                  height: 16.h,
-                ),
+                MySizedBox.height16,
                 const SignWithSocial(),
-                SizedBox(
-                  height: 17.h,
-                ),
+                MySizedBox.height16,
                 state is LoginLoading
                     ? const CustomCircularProgressIndicator()
                     : CustomGeneralButton(
