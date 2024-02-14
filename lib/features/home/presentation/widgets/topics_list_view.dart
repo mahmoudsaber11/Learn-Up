@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:learn_up/core/utils/functions/app_colors.dart';
+import 'package:learn_up/core/utils/functions/my_sized_box.dart';
 import 'package:learn_up/core/utils/widgets/card_topics_item.dart';
 
 class TopicsListView extends StatelessWidget {
@@ -19,9 +20,7 @@ class TopicsListView extends StatelessWidget {
           text: "Business",
           backgroundColor: AppColors.primaryColor,
         ),
-        separatorBuilder: (context, index) => SizedBox(
-          width: 4.w,
-        ),
+        separatorBuilder: (context, index) => MySizedBox.width4,
       ),
     );
   }
