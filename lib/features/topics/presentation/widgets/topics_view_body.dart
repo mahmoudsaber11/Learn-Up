@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:learn_up/core/utils/functions/my_sized_box.dart';
 import 'package:learn_up/core/utils/widgets/card_topics_item.dart';
 import 'package:learn_up/core/utils/widgets/custom_part_of_topics.dart';
 
@@ -13,9 +14,7 @@ class TopicsViewBody extends StatelessWidget {
       child: Column(
         children: [
           const CustomPartOfTopics(),
-          SizedBox(
-            height: 16.h,
-          ),
+          MySizedBox.height16,
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -24,9 +23,7 @@ class TopicsViewBody extends StatelessWidget {
                 text: "History",
                 backgroundColor: const Color(0xFFB1ADE6),
               ),
-              SizedBox(
-                width: 24.w,
-              ),
+              MySizedBox.width24,
               CardTopicsItem(
                 width: 99.w,
                 text: "Math",
@@ -34,9 +31,7 @@ class TopicsViewBody extends StatelessWidget {
               ),
             ],
           ),
-          SizedBox(
-            height: 27.h,
-          ),
+          MySizedBox.height27,
           CardTopicsItem(
             width: 229.w,
             text: "Cyber security",
