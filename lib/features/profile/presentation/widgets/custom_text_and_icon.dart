@@ -7,8 +7,10 @@ class CustomTextAndIcon extends StatelessWidget {
     super.key,
     required this.icon,
     required this.text,
+    this.onPressed,
   });
   final Icon icon;
+  final void Function()? onPressed;
   final String text;
   @override
   Widget build(BuildContext context) {
@@ -16,7 +18,7 @@ class CustomTextAndIcon extends StatelessWidget {
       padding: EdgeInsets.only(left: 30.w, bottom: 30.h),
       child: Row(
         children: [
-          IconButton(onPressed: () {}, icon: icon),
+          IconButton(onPressed: onPressed, icon: icon),
           SizedBox(
             width: 30.w,
           ),

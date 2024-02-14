@@ -32,8 +32,7 @@ class DioConsumer implements ApiConsumer {
 
   @override
   Future post(String path,
-      {Map<String, dynamic>? queryParameters,
-      Map<String, dynamic>? data}) async {
+      {Map<String, dynamic>? queryParameters, Object? data}) async {
     final Response response =
         await dio.post(path, queryParameters: queryParameters, data: data);
     return response.data;

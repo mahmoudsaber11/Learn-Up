@@ -16,41 +16,39 @@ class HomeView extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.only(
           top: MediaQuery.of(context).size.height * .07, left: 16.w),
-      child: Expanded(
-        child: SingleChildScrollView(
-          child: Column(
-            children: [
-              const CustomSearchTextField(),
-              SizedBox(
-                height: 32.h,
-              ),
-              CustomTextType(
-                type: "Topics",
-                onPressed: () =>
-                    context.navigateTo(routeName: Routes.topicsViewRoute),
-              ),
-              SizedBox(
-                height: 10.h,
-              ),
-              const TopicsListView(),
-              SizedBox(
-                height: 20.h,
-              ),
-              const CustomTextType(type: "Recommended Courses"),
-              SizedBox(
-                height: 10.h,
-              ),
-              const RecommendedCoursesListView(),
-              SizedBox(
-                height: 18.h,
-              ),
-              const CustomTextType(type: "Most popular certificates/degrees"),
-              SizedBox(
-                height: 10.h,
-              ),
-              const CertificatesOrDegreesListView(),
-            ],
-          ),
+      child: SingleChildScrollView(
+        child: Column(
+          children: [
+            const CustomSearchTextField(),
+            SizedBox(
+              height: 32.h,
+            ),
+            CustomTextType(
+              type: "Topics",
+              onPressed: () =>
+                  context.navigateTo(routeName: Routes.topicsViewRoute),
+            ),
+            SizedBox(
+              height: 10.h,
+            ),
+            const TopicsListView(),
+            SizedBox(
+              height: 20.h,
+            ),
+            const CustomTextType(type: "Recommended Courses"),
+            SizedBox(
+              height: 10.h,
+            ),
+            const RecommendedCoursesListView(),
+            SizedBox(
+              height: 18.h,
+            ),
+            const CustomTextType(type: "Most popular certificates/degrees"),
+            SizedBox(
+              height: 10.h,
+            ),
+            const CertificatesOrDegreesListView(),
+          ],
         ),
       ),
     );

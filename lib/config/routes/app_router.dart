@@ -38,7 +38,8 @@ class AppRouter {
       case Routes.signUpViewRoute:
         return MaterialPageRoute(
             builder: (context) => BlocProvider(
-                create: (context) => SignUpCubit(), child: const SignUpView()));
+                create: (context) => serviceLocator.get<SignUpCubit>(),
+                child: const SignUpView()));
 
       case Routes.layoutViewRoute:
         return MaterialPageRoute(
