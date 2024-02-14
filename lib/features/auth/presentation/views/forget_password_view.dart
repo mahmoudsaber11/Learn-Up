@@ -30,9 +30,6 @@ class ForgetPasswordView extends StatelessWidget {
               "Forget Password",
               style: AppStyles.textStyle24Medium,
             ),
-            SizedBox(
-              height: 40.h,
-            ),
             Text(
               "Please enter the code we sent to example@gmail.com",
               style: AppStyles.textStyle16Regular
