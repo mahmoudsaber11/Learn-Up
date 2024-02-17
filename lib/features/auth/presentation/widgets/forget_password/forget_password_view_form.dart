@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:learn_up/config/routes/routes.dart';
 import 'package:learn_up/core/helpers/helper.dart';
 import 'package:learn_up/core/utils/functions/app_navigator.dart';
+import 'package:learn_up/core/utils/functions/app_string.dart';
 import 'package:learn_up/core/utils/functions/app_styles.dart';
 import 'package:learn_up/core/utils/functions/my_sized_box.dart';
 import 'package:learn_up/core/utils/widgets/custom_general_button.dart';
@@ -31,16 +32,16 @@ class _ForgetPasswordViewFormState extends State<ForgetPasswordViewForm> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        const TextFieldLabel(label: "Email address"),
+        const TextFieldLabel(label: AppString.emailAddress),
         CustomTextField(
             circular: 20.r,
-            validate: (String? value) => Helper.validateEmailField(value),
+            validate: Helper.validateEmailField,
             keyboardType: TextInputType.emailAddress,
-            hintText: "example@gmail.com",
+            hintText: AppString.hintTextEmail,
             controller: _emailController),
         MySizedBox.height22,
         CustomGeneralButton(
-            text: "Verify Email",
+            text: AppString.verifyEmail,
             onPressed: () =>
                 context.navigateTo(routeName: Routes.verificationViewRoute)),
         MySizedBox.height16,
@@ -59,14 +60,14 @@ class _ForgetPasswordViewFormState extends State<ForgetPasswordViewForm> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              "Don’t  have an account ?",
+              AppString.notAccount,
               style: AppStyles.textStyle12Medium.copyWith(color: Colors.black),
             ),
             InkWell(
               onTap: () =>
                   context.navigateTo(routeName: Routes.signUpViewRoute),
               child: Text(
-                "Sign up",
+                AppString.signUp,
                 style: AppStyles.textStyle12Medium,
               ),
             ),

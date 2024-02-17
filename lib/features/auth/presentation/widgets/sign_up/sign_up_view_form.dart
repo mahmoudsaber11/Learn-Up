@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:learn_up/core/helpers/helper.dart';
 import 'package:learn_up/core/utils/functions/app_colors.dart';
+import 'package:learn_up/core/utils/functions/app_string.dart';
 import 'package:learn_up/core/utils/functions/my_sized_box.dart';
 import 'package:learn_up/core/utils/widgets/custom_general_button.dart';
 import 'package:learn_up/core/utils/widgets/custom_text_field.dart';
@@ -74,25 +75,25 @@ class _LoginViewFormState extends State<SignUpForm> {
                     pickedImage: _pickedImage,
                   ),
                 ),
-                const TextFieldLabel(label: "Email address"),
+                const TextFieldLabel(label: AppString.emailAddress),
                 CustomTextField(
                     circular: 20.r,
                     validate: (String? value) =>
                         Helper.validateEmailField(value),
                     keyboardType: TextInputType.emailAddress,
-                    hintText: "example@gmail.com",
+                    hintText: AppString.hintTextEmail,
                     controller: _emailController),
                 MySizedBox.height16,
-                const TextFieldLabel(label: "Username"),
+                const TextFieldLabel(label: AppString.userName),
                 CustomTextField(
                     circular: 20.r,
                     validate: (String? value) =>
                         Helper.validateUserNameField(value),
                     keyboardType: TextInputType.name,
-                    hintText: "userName",
+                    hintText: AppString.userName,
                     controller: _userNameController),
                 MySizedBox.height16,
-                const TextFieldLabel(label: "Password"),
+                const TextFieldLabel(label: AppString.password),
                 CustomTextField(
                     circular: 20.r,
                     validate: (String? value) =>
@@ -109,10 +110,10 @@ class _LoginViewFormState extends State<SignUpForm> {
                           color: AppColors.primaryColor,
                         )),
                     keyboardType: TextInputType.visiblePassword,
-                    hintText: '*********',
+                    hintText: AppString.hintTextPassword,
                     controller: _passwordController),
                 MySizedBox.height16,
-                const TextFieldLabel(label: "Confirm Password"),
+                const TextFieldLabel(label: AppString.confirmPassword),
                 CustomTextField(
                     circular: 20.r,
                     validate: (String? value) =>
@@ -133,7 +134,7 @@ class _LoginViewFormState extends State<SignUpForm> {
                           color: AppColors.primaryColor,
                         )),
                     keyboardType: TextInputType.visiblePassword,
-                    hintText: '*********',
+                    hintText: AppString.hintTextPassword,
                     controller: _confirmController),
                 MySizedBox.height16,
                 const OrSignIn(),
@@ -141,7 +142,7 @@ class _LoginViewFormState extends State<SignUpForm> {
                 const SignWithSocial(),
                 MySizedBox.height16,
                 CustomGeneralButton(
-                    text: "Sign up",
+                    text: AppString.signUp,
                     onPressed: () {
                       if (_formKey.currentState!.validate()) {
                         cubit.userSignUp(

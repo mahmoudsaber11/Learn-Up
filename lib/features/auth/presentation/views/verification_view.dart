@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:learn_up/core/utils/functions/app_colors.dart';
 import 'package:learn_up/core/utils/functions/app_navigator.dart';
+import 'package:learn_up/core/utils/functions/app_string.dart';
 import 'package:learn_up/core/utils/functions/app_styles.dart';
 import 'package:learn_up/core/utils/functions/my_sized_box.dart';
 import 'package:learn_up/features/auth/presentation/widgets/verification/verification_view_form.dart';
@@ -28,12 +29,12 @@ class VerificationView extends StatelessWidget {
         child: Column(
           children: [
             Text(
-              "OTP Verification",
+              AppString.otp,
               style: AppStyles.textStyle24Medium,
             ),
             MySizedBox.height40,
             Text(
-              "We’ve sent a code to Example@gmail.com",
+              AppString.sentCode,
               style: AppStyles.textStyle16Regular
                   .copyWith(color: AppColors.greyColor),
             ),

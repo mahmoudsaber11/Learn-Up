@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:learn_up/core/utils/functions/app_string.dart';
 import 'package:learn_up/features/onBoarding/presentation/cubit/on_boarding_cubit.dart';
 import 'package:learn_up/features/onBoarding/presentation/widgets/on_boarding_view_body.dart';
 
@@ -16,7 +17,7 @@ class OnBoardingView extends StatelessWidget {
               BlocProvider.of<OnBoardingCubit>(context)
                   .skipToLogin(context: context);
             },
-            child: const Text("Skip"),
+            child: const Text(AppString.skip),
           ),
         ],
       ),

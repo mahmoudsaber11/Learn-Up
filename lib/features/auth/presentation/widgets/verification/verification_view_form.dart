@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:learn_up/config/routes/routes.dart';
 import 'package:learn_up/core/utils/functions/app_colors.dart';
 import 'package:learn_up/core/utils/functions/app_navigator.dart';
+import 'package:learn_up/core/utils/functions/app_string.dart';
 import 'package:learn_up/core/utils/functions/my_sized_box.dart';
 import 'package:learn_up/core/utils/widgets/custom_general_button.dart';
 import 'package:learn_up/core/utils/widgets/text_field_label.dart';
@@ -30,7 +31,7 @@ class _ForgetPasswordViewFormState extends State<VerificationViewForm> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        const TextFieldLabel(label: "OTP Code"),
+        const TextFieldLabel(label: AppString.otpCode),
         MySizedBox.height20,
         Pinput(
           controller: _otpController,
@@ -58,7 +59,7 @@ class _ForgetPasswordViewFormState extends State<VerificationViewForm> {
         ),
         MySizedBox.height40,
         CustomGeneralButton(
-            text: "Verify",
+            text: AppString.verify,
             onPressed: () =>
                 context.navigateTo(routeName: Routes.resetPasswordViewRoute)),
       ],

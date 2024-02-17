@@ -73,7 +73,7 @@ class _LoginViewFormState extends State<LoginViewForm> {
             key: _formKey,
             child: Column(
               children: [
-                const TextFieldLabel(label: "Email address"),
+                const TextFieldLabel(label: AppString.emailAddress),
                 CustomTextField(
                     circular: 20.r,
                     validate: (String? value) =>
@@ -83,10 +83,10 @@ class _LoginViewFormState extends State<LoginViewForm> {
                         FocusScope.of(context).requestFocus(_passwordFocusNode),
                     autofillHints: const [AutofillHints.email],
                     focusNode: _emailFocusNode,
-                    hintText: "example@gmail.com",
+                    hintText: AppString.hintTextEmail,
                     controller: _emailController),
                 MySizedBox.height20,
-                const TextFieldLabel(label: "Password"),
+                const TextFieldLabel(label: AppString.password),
                 CustomTextField(
                     autofillHints: const <String>[AutofillHints.password],
                     circular: 20.r,
@@ -106,7 +106,7 @@ class _LoginViewFormState extends State<LoginViewForm> {
                           color: AppColors.primaryColor,
                         )),
                     keyboardType: TextInputType.visiblePassword,
-                    hintText: '*********',
+                    hintText: AppString.hintTextPassword,
                     controller: _passwordController),
                 MySizedBox.height16,
                 Align(
@@ -115,7 +115,7 @@ class _LoginViewFormState extends State<LoginViewForm> {
                     onTap: () => context.navigateTo(
                         routeName: Routes.forgetPasswordViewRoute),
                     child: Text(
-                      "Forget Password?",
+                      AppString.forget,
                       style: AppStyles.textStyle16Regular
                           .copyWith(color: AppColors.primaryColor),
                     ),
@@ -129,7 +129,7 @@ class _LoginViewFormState extends State<LoginViewForm> {
                 state is LoginLoading
                     ? const CustomCircularProgressIndicator()
                     : CustomGeneralButton(
-                        text: "Login", onPressed: () => _login(context))
+                        text: AppString.login, onPressed: () => _login(context))
               ],
             ),
           );

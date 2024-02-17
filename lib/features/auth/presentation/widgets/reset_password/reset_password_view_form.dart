@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:learn_up/core/helpers/helper.dart';
 import 'package:learn_up/core/utils/functions/app_colors.dart';
+import 'package:learn_up/core/utils/functions/app_string.dart';
 import 'package:learn_up/core/utils/functions/my_sized_box.dart';
 import 'package:learn_up/core/utils/widgets/custom_general_button.dart';
 import 'package:learn_up/core/utils/widgets/custom_text_field.dart';
@@ -53,7 +54,7 @@ class _LoginViewFormState extends State<ResetPasswordForm> {
         key: _formKey,
         child: Column(
           children: [
-            const TextFieldLabel(label: "Password"),
+            const TextFieldLabel(label: AppString.password),
             CustomTextField(
                 circular: 20.r,
                 validate: (String? value) =>
@@ -70,10 +71,10 @@ class _LoginViewFormState extends State<ResetPasswordForm> {
                       color: AppColors.primaryColor,
                     )),
                 keyboardType: TextInputType.visiblePassword,
-                hintText: '*********',
+                hintText: AppString.hintTextPassword,
                 controller: _passwordController),
             MySizedBox.height16,
-            const TextFieldLabel(label: "Confirm Password"),
+            const TextFieldLabel(label: AppString.confirmPassword),
             CustomTextField(
                 circular: 20.r,
                 validate: (String? value) =>
@@ -92,11 +93,11 @@ class _LoginViewFormState extends State<ResetPasswordForm> {
                       color: AppColors.primaryColor,
                     )),
                 keyboardType: TextInputType.visiblePassword,
-                hintText: '*********',
+                hintText: AppString.hintTextPassword,
                 controller: _passwordController),
             MySizedBox.height32,
             CustomGeneralButton(
-                text: "Reset Password",
+                text: AppString.resetPassword,
                 onPressed: () async {
                   await showDialog(
                     context: context,

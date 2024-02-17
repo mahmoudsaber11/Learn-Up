@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:learn_up/core/utils/functions/app_string.dart';
 import 'package:learn_up/core/utils/functions/my_sized_box.dart';
 
 import 'package:learn_up/core/utils/widgets/custom_general_button.dart';
@@ -39,7 +40,9 @@ class _OnBoardingViewBodyState extends State<OnBoardingViewBody> {
             ),
             CustomGeneralButton(
                 width: 326.w,
-                text: cubit.isLastBoarding ? "Get Started" : "Next",
+                text: cubit.isLastBoarding
+                    ? AppString.getStarted
+                    : AppString.next,
                 onPressed: () => _navigateAmongOnBoarding(context)),
             SizedBox(
               height: MediaQuery.of(context).size.height * .12.h,

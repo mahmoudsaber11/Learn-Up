@@ -42,7 +42,7 @@ class OnBoardingRepoImpl implements OnBoardingRepo {
   void skipToLogin({required BuildContext context}) {
     serviceLocator
         .get<CacheHelper>()
-        .saveData(key: 'onBoarding', value: true)
+        .saveData(key: AppString.cachedOnboarding, value: true)
         .then(
       (value) {
         if (value) {
