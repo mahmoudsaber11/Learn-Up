@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:learn_up/core/utils/functions/app_assets.dart';
+import 'package:learn_up/core/utils/functions/app_string.dart';
 import 'package:learn_up/features/layout/presentation/cubit/layout_cubit.dart';
 import 'package:learn_up/features/layout/presentation/cubit/layout_state.dart';
 
@@ -26,15 +27,15 @@ class LayoutView extends StatelessWidget {
                     icon: Image.asset(
                       AppAssets.iconHome,
                     ),
-                    label: "Home"),
+                    label: AppString.home),
                 BottomNavigationBarItem(
                     activeIcon: Image.asset(AppAssets.iconActiveFavorite),
                     icon: Image.asset(AppAssets.iconFavorite),
-                    label: "Favorite"),
+                    label: AppString.favorite),
                 BottomNavigationBarItem(
                     activeIcon: Image.asset(AppAssets.iconActiveProfile),
                     icon: Image.asset(AppAssets.iconProfile),
-                    label: "Profile"),
+                    label: AppString.profile),
               ]),
         );
       },

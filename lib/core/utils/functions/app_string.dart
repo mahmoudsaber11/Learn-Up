@@ -49,4 +49,9 @@ class AppString {
   static const String verify = "Verify";
   static const String otpCode = "OTP Code";
   static const String or = "_____________or_____________";
+
+  //layoutText
+  static const String home = "Home";
+  static const String favorite = "Favorite";
+  static const String profile = "Profile";
 }
