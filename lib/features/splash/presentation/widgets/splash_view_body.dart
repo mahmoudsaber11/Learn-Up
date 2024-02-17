@@ -94,7 +94,7 @@ class _SplashViewBodyState extends State<SplashViewBody> {
             fit: BoxFit.cover,
           ),
           Text(
-            "Learn Up",
+            AppString.appName,
             textAlign: TextAlign.center,
             style: TextStyle(
               color: AppColors.primaryColor,

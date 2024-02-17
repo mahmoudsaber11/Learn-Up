@@ -3,6 +3,7 @@ import 'package:learn_up/config/routes/routes.dart';
 import 'package:learn_up/core/helpers/cache_helper.dart';
 import 'package:learn_up/core/utils/functions/app_assets.dart';
 import 'package:learn_up/core/utils/functions/app_navigator.dart';
+import 'package:learn_up/core/utils/functions/app_string.dart';
 import 'package:learn_up/features/onBoarding/data/model/on_boarding_model.dart';
 import 'package:learn_up/features/onBoarding/data/repositories/on_boarding_repo.dart';
 import 'package:learn_up/service_locator.dart';
@@ -12,20 +13,17 @@ class OnBoardingRepoImpl implements OnBoardingRepo {
   List<OnBoardingModel> onBoardingPages() {
     return const <OnBoardingModel>[
       OnBoardingModel(
-          title: "Easy Registration",
+          title: AppString.onBoardingTitle1,
           image: AppAssets.onBoarding1,
-          subTitle:
-              "Begin your learning journey with learn app \n by creating a personal account. Enter your \n information and log in to access \n personalized content."),
+          subTitle: AppString.onBoardingSubTitle1),
       OnBoardingModel(
-          title: "Explore Courses and Fields",
+          title: AppString.onBoardingTitle2,
           image: AppAssets.onBoarding2,
-          subTitle:
-              "Discover our world of knowledge! Browse a \n variety of courses and educational fields. \n Search and find what suits your interests \n and goals."),
+          subTitle: AppString.onBoardingSubTitle2),
       OnBoardingModel(
-          title: "Choose a Course and Get a Certificate",
+          title: AppString.onBoardingTitle3,
           image: AppAssets.onBoarding3,
-          subTitle:
-              "Select the course you want to study and \n your preferred instructor. Watch \n educational videos and receive your \n certificate upon successful course \n completion."),
+          subTitle: AppString.onBoardingSubTitle3),
     ];
   }
 
