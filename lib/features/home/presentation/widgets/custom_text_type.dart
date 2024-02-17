@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:learn_up/core/utils/functions/app_colors.dart';
+import 'package:learn_up/core/utils/functions/app_string.dart';
 import 'package:learn_up/core/utils/functions/app_styles.dart';
 
 class CustomTextType extends StatelessWidget {
@@ -23,7 +24,7 @@ class CustomTextType extends StatelessWidget {
         TextButton(
             onPressed: onPressed,
             child: Text(
-              "See All",
+              AppString.seeAll,
               style: AppStyles.textStyle14Medium
                   .copyWith(color: AppColors.greyColor),
             )),

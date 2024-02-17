@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:learn_up/core/utils/functions/app_assets.dart';
+import 'package:learn_up/core/utils/functions/app_string.dart';
 import 'package:learn_up/core/utils/widgets/custom_text_field.dart';
 
 class CustomSearchTextField extends StatefulWidget {
@@ -34,7 +35,7 @@ class _CustomSearchTextFieldState extends State<CustomSearchTextField> {
               icon: Image.asset(
                 AppAssets.iconFilter,
               )),
-          hintText: "What do you  want to learn ?",
+          hintText: AppString.hintTextSearch,
           keyboardType: TextInputType.text,
           controller: _searchController),
     );

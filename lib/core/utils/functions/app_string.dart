@@ -54,4 +54,11 @@ class AppString {
   static const String home = "Home";
   static const String favorite = "Favorite";
   static const String profile = "Profile";
+
+  //homeText
+  static const String topics = "Topics";
+  static const String recommendedCourses = "Recommended Courses";
+  static const String certificates = "Most popular certificates/degrees";
+  static const String hintTextSearch = "What do you  want to learn ?";
+  static const String seeAll = "See All";
 }
