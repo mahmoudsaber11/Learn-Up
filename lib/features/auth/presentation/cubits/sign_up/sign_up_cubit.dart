@@ -31,7 +31,7 @@ class SignUpCubit extends Cubit<SignUpState> {
       value.fold((failure) {
         emit(SignUpError(error: failure.errMessage.toString()));
       }, (user) {
-        emit(SignUpSuccess(user: user, uId: user.token));
+        emit(SignUpSuccess(user: user, uId: user.token!));
       });
     });
   }

@@ -1,11 +1,11 @@
 import 'package:equatable/equatable.dart';
 
 class User extends Equatable {
-  final String message;
-  final String userName;
-  final String email;
-  final String imageUrl;
-  final String token;
+  final String? message;
+  final String? userName;
+  final String? email;
+  final String? imageUrl;
+  final String? token;
 
   const User(
       {required this.message,
@@ -15,11 +15,11 @@ class User extends Equatable {
       required this.token});
   factory User.fromJson(dynamic json) {
     return User(
-        message: json['message'],
-        userName: json['userName'],
-        email: json['email'],
-        imageUrl: json['imageUrl'],
-        token: json['token']);
+        message: json['message'] as String?,
+        userName: json['userName'] as String?,
+        email: json['email'] as String?,
+        imageUrl: json['imageUrl'] as String?,
+        token: json['token'] as String?);
   }
 
   @override

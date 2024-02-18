@@ -76,8 +76,7 @@ class _LoginViewFormState extends State<LoginViewForm> {
                 const TextFieldLabel(label: AppString.emailAddress),
                 CustomTextField(
                     circular: 20.r,
-                    validate: (String? value) =>
-                        Helper.validateEmailField(value),
+                    validate: Helper.validateEmailField,
                     keyboardType: TextInputType.emailAddress,
                     onEditingComplete: () =>
                         FocusScope.of(context).requestFocus(_passwordFocusNode),
@@ -90,8 +89,7 @@ class _LoginViewFormState extends State<LoginViewForm> {
                 CustomTextField(
                     autofillHints: const <String>[AutofillHints.password],
                     circular: 20.r,
-                    validate: (String? value) =>
-                        Helper.validatePasswordField(value),
+                    validate: Helper.validatePasswordField,
                     focusNode: _passwordFocusNode,
                     isPassword: cubit.isPassword,
                     onSubmit: (_) => _login(context),
