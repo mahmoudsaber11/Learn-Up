@@ -56,7 +56,7 @@ class SignUpRepoImpl implements SignUpRepo {
       // log(Map.fromEntries(formData.fields).toString());
 
       final response = await dioConsumer.post(EndPoints.signUp, data: formData);
-      log(response);
+      log(response.toString());
       final User user = User.fromJson(response);
 
       return Right(user);
