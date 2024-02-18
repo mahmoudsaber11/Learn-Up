@@ -2,10 +2,13 @@ import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
 import 'package:learn_up/core/api/dio_consumer.dart';
 import 'package:learn_up/core/helpers/cache_helper.dart';
+import 'package:learn_up/features/auth/data/repositories/forgot_password/forgot_password_repo.dart';
+import 'package:learn_up/features/auth/data/repositories/forgot_password/forgot_password_repo_impl.dart';
 import 'package:learn_up/features/auth/data/repositories/login/login_repo.dart';
 import 'package:learn_up/features/auth/data/repositories/login/login_repo_impl.dart';
 import 'package:learn_up/features/auth/data/repositories/sign_up/sign_up_repo.dart';
 import 'package:learn_up/features/auth/data/repositories/sign_up/sign_up_repo_impl.dart';
+import 'package:learn_up/features/auth/presentation/cubits/forget_password/forget_password_cubit.dart';
 import 'package:learn_up/features/auth/presentation/cubits/login/login_cubit.dart';
 import 'package:learn_up/features/auth/presentation/cubits/sign_up/sign_up_cubit.dart';
 import 'package:learn_up/features/layout/data/repositories/layout_repo.dart';
@@ -71,6 +74,11 @@ void _setupForRepos() {
       dioConsumer: serviceLocator.get<DioConsumer>(),
     ),
   );
+  serviceLocator.registerLazySingleton<ForgetPasswordRepo>(
+    () => ForgetPasswordRepoImpl(
+      dioConsumer: serviceLocator.get<DioConsumer>(),
+    ),
+  );
 }
 
 void _setupForCubits() {
@@ -85,5 +93,10 @@ void _setupForCubits() {
   );
   serviceLocator.registerFactory<SignUpCubit>(
     () => SignUpCubit(signUpRepo: serviceLocator.get<SignUpRepo>()),
+  );
+
+  serviceLocator.registerFactory<ForgetPasswordCubit>(
+    () => ForgetPasswordCubit(
+        forgetPasswordRepo: serviceLocator.get<ForgetPasswordRepo>()),
   );
 }

@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 import 'package:learn_up/core/api/dio_consumer.dart';
@@ -18,7 +16,7 @@ class ForgetPasswordRepoImpl implements ForgetPasswordRepo {
     try {
       final Response response = await dioConsumer
           .post(EndPoints.forgetPassword, data: {"email": email});
-      final User user = User.fromJson(response);
+      final User user = User.fromJson(response.data);
       return right(user);
     } catch (e) {
       if (e is DioException) {

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:learn_up/config/routes/routes.dart';
+import 'package:learn_up/features/auth/presentation/cubits/forget_password/forget_password_cubit.dart';
 import 'package:learn_up/features/auth/presentation/cubits/login/login_cubit.dart';
 import 'package:learn_up/features/auth/presentation/cubits/reset_password/reset_password_cubit.dart';
 import 'package:learn_up/features/auth/presentation/cubits/sign_up/sign_up_cubit.dart';
@@ -49,7 +50,9 @@ class AppRouter {
 
       case Routes.forgetPasswordViewRoute:
         return MaterialPageRoute(
-            builder: (context) => const ForgetPasswordView());
+            builder: (context) => BlocProvider(
+                create: (context) => serviceLocator.get<ForgetPasswordCubit>(),
+                child: const ForgetPasswordView()));
 
       case Routes.verificationViewRoute:
         return MaterialPageRoute(
