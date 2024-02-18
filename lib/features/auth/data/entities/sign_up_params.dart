@@ -1,11 +1,11 @@
 import 'package:equatable/equatable.dart';
 
 class SignUpParams extends Equatable {
-  final String email;
-  final String username;
+  final String? email;
+  final String? username;
   final String? profileImage;
-  final String password;
-  final String confirmPassword;
+  final String? password;
+  final String? confirmPassword;
 
   const SignUpParams({
     this.profileImage,

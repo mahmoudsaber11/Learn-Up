@@ -37,10 +37,10 @@ class SignUpRepoImpl implements SignUpRepo {
       // });
 
       formData.fields
-        ..add(MapEntry('Email', signUpParams.email))
-        ..add(MapEntry('userName', signUpParams.username))
-        ..add(MapEntry('Password', signUpParams.password))
-        ..add(MapEntry('ConfirmPassword', signUpParams.confirmPassword));
+        ..add(MapEntry('Email', signUpParams.email!))
+        ..add(MapEntry('userName', signUpParams.username!))
+        ..add(MapEntry('Password', signUpParams.password!))
+        ..add(MapEntry('ConfirmPassword', signUpParams.confirmPassword!));
 
       if (signUpParams.profileImage != null) {
         final profilePhotoName = signUpParams.profileImage!.split("/").last;
