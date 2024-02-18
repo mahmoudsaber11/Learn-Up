@@ -13,7 +13,7 @@ class User extends Equatable {
       required this.email,
       required this.imageUrl,
       required this.token});
-  factory User.fromJson(dynamic json) {
+  factory User.fromJson(json) {
     return User(
         message: json['message'] as String?,
         userName: json['userName'] as String?,
